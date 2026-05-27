@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハンドリ｜あなたのお金タイプ診断</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f8f9ff;color:#1a1a2e;line-height:1.75}
+
+  /* HERO */
+  .hero{background:linear-gradient(145deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;text-align:center;padding:64px 20px 52px}
+  .hero-eyebrow{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:6px 18px;border-radius:999px;font-size:13px;letter-spacing:.05em;margin-bottom:20px}
+  .hero h1{font-size:clamp(24px,5.5vw,42px);font-weight:800;line-height:1.25;margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:#ffd166}
+  .hero-sub{font-size:15px;opacity:.82;margin-bottom:10px;line-height:1.8}
+  .hero-stat{display:inline-block;background:rgba(255,209,102,.15);border:1px solid rgba(255,209,102,.3);color:#ffd166;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:600;margin:14px 0 32px}
+  .btn-line{display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;font-size:17px;font-weight:700;padding:15px 34px;border-radius:999px;text-decoration:none;box-shadow:0 6px 24px rgba(6,199,85,.4);transition:transform .2s,box-shadow .2s}
+  .btn-line:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(6,199,85,.55)}
+  .btn-line svg{width:26px;height:26px}
+  .hero-note{margin-top:13px;font-size:13px;opacity:.6}
+
+  /* SECTION BASE */
+  .sec{padding:56px 20px}
+  .sec-inner{max-width:720px;margin:0 auto}
+  .sec-title{font-size:clamp(20px,4vw,28px);font-weight:800;margin-bottom:8px}
+  .sec-sub{color:#666;font-size:14px;margin-bottom:36px}
+  .sec-title.center,.sec-sub.center{text-align:center}
+
+  /* REALITY CHECK */
+  .reality{background:#1a1a2e;color:#fff;padding:56px 20px}
+  .reality .sec-inner{max-width:680px}
+  .reality .sec-title{color:#ffd166}
+  .reality .sec-sub{color:rgba(255,255,255,.65)}
+  .rc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+  .rc-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 18px}
+  .rc-num{font-size:clamp(30px,5vw,42px);font-weight:800;color:#ffd166;line-height:1;margin-bottom:8px}
+  .rc-label{font-size:13px;opacity:.8;line-height:1.6}
+  .rc-note{margin-top:24px;background:rgba(255,209,102,.1);border-left:3px solid #ffd166;padding:14px 16px;border-radius:0 12px 12px 0;font-size:14px;opacity:.9;line-height:1.7}
+
+  /* SIMULATOR */
+  .sim-bg{background:#fff;padding:56px 20px}
+  .sim-box{background:linear-gradient(145deg,#f0f4ff,#e8f0fe);border-radius:20px;padding:30px 24px;margin-top:28px}
+  .sim-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+  .sim-row label{font-size:14px;font-weight:600;min-width:140px;color:#444}
+  .sim-row input[type=range]{flex:1;min-width:140px;accent-color:#0f3460}
+  .sim-row .val{font-weight:700;color:#0f3460;min-width:70px}
+  .sim-result{margin-top:22px;background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+  .sim-result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #eee;font-size:14px}
+  .sim-result-row:last-child{border:none;padding-bottom:0}
+  .sim-result-row .label{color:#666}
+  .sim-result-row .value{font-weight:700;color:#1a1a2e}
+  .sim-result-row.highlight .value{color:#06C755;font-size:18px}
+  .sim-note{font-size:12px;color:#999;margin-top:12px;line-height:1.6}
+  .inflation-box{margin-top:16px;background:#fff4e5;border-radius:12px;padding:14px 16px;font-size:13px;color:#7c4c00;line-height:1.7}
+
+  /* STORIES */
+  .stories{background:#f0f4ff;padding:56px 20px}
+  .story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:28px}
+  .story-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+  .story-card .icon{font-size:28px;margin-bottom:12px}
+  .story-card .quote{font-size:14px;line-height:1.8;color:#333;margin-bottom:14px}
+  .story-card .tag{font-size:12px;background:#e8f0fe;color:#1d4ed8;padding:4px 12px;border-radius:999px;font-weight:600}
+
+  /* TYPES */
+  .types-bg{background:#fff;padding:56px 20px}
+  .types-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:680px;margin:28px auto 0}
+  .type-card{border-radius:16px;padding:18px;color:#fff;position:relative;overflow:hidden}
+  .type-card::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.1)}
+  .type-a{background:linear-gradient(135deg,#0f3460,#1a5276)}
+  .type-b{background:linear-gradient(135deg,#5b4fcf,#7b68ee)}
+  .type-c{background:linear-gradient(135deg,#1a7a4a,#27ae60)}
+  .type-d{background:linear-gradient(135deg,#b7410e,#e67e22)}
+  .type-emoji{font-size:26px;margin-bottom:8px}
+  .type-name{font-size:15px;font-weight:700;margin-bottom:4px}
+  .type-desc{font-size:12px;opacity:.88;line-height:1.55}
+
+  /* HOW */
+  .how-bg{background:#1a1a2e;color:#fff;padding:56px 20px}
+  .how-bg .sec-title,.how-bg .sec-sub{color:#fff}
+  .how-bg .sec-sub{opacity:.7}
+  .steps{display:flex;flex-direction:column;gap:0;max-width:520px;margin:0 auto}
+  .step{display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .step:last-child{border:none}
+  .step-num{background:#ffd166;color:#1a1a2e;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .step-text h3{font-size:15px;font-weight:700;margin-bottom:4px}
+  .step-text p{font-size:13px;opacity:.75;line-height:1.6}
+
+  /* CTA BAND */
+  .cta-band{background:linear-gradient(135deg,#06C755,#04a044);text-align:center;padding:52px 20px;color:#fff}
+  .cta-band h2{font-size:22px;font-weight:800;margin-bottom:10px}
+  .cta-band p{font-size:15px;opacity:.92;margin-bottom:30px;line-height:1.7}
+
+  /* FAQ */
+  .faq-bg{background:#f8f9ff;padding:56px 20px}
+  .faq-list{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  .faq-q{font-size:15px;font-weight:700;color:#0f3460;margin-bottom:8px}
+  .faq-a{font-size:14px;color:#555;line-height:1.75}
+
+  footer{text-align:center;padding:24px;font-size:12px;color:#aaa;background:#f8f9ff}
+  footer a{color:#aaa}
+
+  @media(max-width:480px){
+    .rc-grid{grid-template-columns:1fr}
+    .types-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ① HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">無料 · 2分 · スマホで完結</div>
+  <h1>お金の使い方、<br><em>タイプで変わる。</em></h1>
+  <p class="hero-sub">診断から始めれば、何を選ぶべきかが<br>ひとつひとつ見えてきます。</p>
+  <div class="hero-stat">日本人の62%がまだ投資を始めていない</div>
+  <br>
+  <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="btn-line">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.630 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINEで無料診断を始める
+  </a>
+  <p class="hero-note">登録無料・個人情報の入力なし</p>
+</section>
+
+<!-- ② REALITY CHECK -->
+<section class="reality">
+  <div class="sec-inner">
+    <div class="sec-title">「貯金してるから大丈夫」は、<br>本当にそうでしょうか？</div>
+    <div class="sec-sub">数字で見ると、じわじわ見えてくることがあります。</div>
+    <div class="rc-grid">
+      <div class="rc-card">
+        <div class="rc-num">-18%</div>
+        <div class="rc-label">年2%のインフレが10年続くと、<br>100万円の実質価値はこれだけ目減りします</div>
+      </div>
+      <div class="rc-card">
+        <div class="rc-num">0.02%</div>
+        <div class="rc-label">多くの銀行普通預金の金利。<br>インフレ率との差は、毎年広がり続けます</div>
+      </div>
+      <div class="rc-card">
+        <div class="rc-num">53%</div>
+        <div class="rc-label">アメリカ人が株式・投資信託で保有する<br>金融資産の割合。日本は約20%</div>
+      </div>
+      <div class="rc-card">
+        <div class="rc-num">3倍</div>
+        <div class="rc-label">月1万円・年率4%・50年で<br>元本の約3倍になる複利の力</div>
+      </div>
+    </div>
+    <div class="rc-note">「動かない」が最も安全に見えて、じつは最もリスクが高い選択肢のひとつかもしれません。</div>
+  </div>
+</section>
+
+<!-- ③ SIMULATOR -->
+<section class="sim-bg">
+  <div class="sec-inner">
+    <h2 class="sec-title center">自分の数字で確かめてみる</h2>
+    <p class="sec-sub center">スライダーを動かしてください。</p>
+    <div class="sim-box">
+      <div class="sim-row">
+        <label>毎月の積立額</label>
+        <input type="range" id="monthly" min="1000" max="50000" step="1000" value="10000" oninput="calcSim()">
+        <span class="val" id="monthly-val">10,000円</span>
+      </div>
+      <div class="sim-row">
+        <label>運用期間</label>
+        <input type="range" id="years" min="5" max="40" step="5" value="20" oninput="calcSim()">
+        <span class="val" id="years-val">20年</span>
+      </div>
+      <div class="sim-row">
+        <label>想定利回り</label>
+        <input type="range" id="rate" min="1" max="8" step="0.5" value="4" oninput="calcSim()">
+        <span class="val" id="rate-val">4%</span>
+      </div>
+      <div class="sim-result">
+        <div class="sim-result-row"><span class="label">積立元本</span><span class="value" id="r-principal">—</span></div>
+        <div class="sim-result-row"><span class="label">銀行預金（年利0.02%）</span><span class="value" id="r-bank">—</span></div>
+        <div class="sim-result-row highlight"><span class="label">投資した場合</span><span class="value" id="r-invest">—</span></div>
+        <div class="sim-result-row"><span class="label">その差</span><span class="value" id="r-diff" style="color:#e74c3c">—</span></div>
+      </div>
+      <div class="inflation-box" id="inflation-box"></div>
+      <p class="sim-note">※ 将来のリターンを保証するものではありません。あくまでシミュレーションです。</p>
+    </div>
+  </div>
+</section>
+<script>
+function fmt(n){return Math.round(n).toLocaleString('ja-JP')+'円'}
+function calcSim(){
+  var m=+document.getElementById('monthly').value;
+  var y=+document.getElementById('years').value;
+  var r=+document.getElementById('rate').value/100/12;
+  var rb=0.0002/12;
+  var n=y*12;
+  document.getElementById('monthly-val').textContent=m.toLocaleString('ja-JP')+'円';
+  document.getElementById('years-val').textContent=y+'年';
+  document.getElementById('rate-val').textContent=(+document.getElementById('rate').value)+'%';
+  var principal=m*n;
+  var bank=m*((Math.pow(1+rb,n)-1)/rb);
+  var invest=m*((Math.pow(1+r,n)-1)/r);
+  var diff=invest-bank;
+  document.getElementById('r-principal').textContent=fmt(principal);
+  document.getElementById('r-bank').textContent=fmt(bank);
+  document.getElementById('r-invest').textContent=fmt(invest);
+  document.getElementById('r-diff').textContent='+'+fmt(diff);
+  var yr=+document.getElementById('rate').value;
+  var realVal=principal*Math.pow(0.98,y);
+  document.getElementById('inflation-box').innerHTML='📌 インフレ（年2%）が続いた場合、元本'+fmt(principal)+'の実質価値は'+y+'年後に<strong style="color:#c0392b">'+fmt(realVal)+'相当</strong>に目減りします。';
+}
+calcSim();
+</script>
+
+<!-- ④ STORIES -->
+<section class="stories">
+  <div class="sec-inner">
+    <h2 class="sec-title center">始めた人たちのリアルな声</h2>
+    <p class="sec-sub center">スーパー投資家の話より、等身大のほうが刺さる。</p>
+    <div class="story-grid">
+      <div class="story-card">
+        <div class="icon">👩‍💼</div>
+        <p class="quote">「友達に『月3,000円からでいいよ』って言われて、それで始めた。知識ゼロのままNISAを開設して、2年で積立額より10%増えてた。」</p>
+        <span class="tag">20代・社会人1年目</span>
+      </div>
+      <div class="story-card">
+        <div class="icon">🎓</div>
+        <p class="quote">「バイト代の1万円を毎月入れてるだけ。難しいことは何もしてない。でも、ちゃんと増えてる。それだけで満足してる。」</p>
+        <span class="tag">22歳・大学生</span>
+      </div>
+      <div class="story-card">
+        <div class="icon">👨‍💻</div>
+        <p class="quote">「最初はずっと怖かった。でも、始めてしばらくは相場見ないって決めて、自動積立に設定したら、気づいたら慣れてた。」</p>
+        <span class="tag">26歳・エンジニア</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ TYPES -->
+<section class="types-bg">
+  <div class="sec-inner" style="max-width:720px;margin:0 auto">
+    <h2 class="sec-title center">8つのお金タイプ</h2>
+    <p class="sec-sub center">診断でわかるのはどれ？</p>
+    <div class="types-grid">
+      <div class="type-card type-a"><div class="type-emoji">🦋</div><div class="type-name">跳躍前のちょうちょ</div><div class="type-desc">準備は整ってる。あとは最初の一歩だけ</div></div>
+      <div class="type-card type-b"><div class="type-emoji">🚀</div><div class="type-name">行動ロケット</div><div class="type-desc">直感で動ける。仕組みさえ作れば最強</div></div>
+      <div class="type-card type-a"><div class="type-emoji">🦅</div><div class="type-name">飛躍のワシ</div><div class="type-desc">大局を見て、ここぞで動ける戦略家</div></div>
+      <div class="type-card type-b"><div class="type-emoji">🐬</div><div class="type-name">慎重イルカ</div><div class="type-desc">好奇心はある。「続く仕組み」が鍵</div></div>
+      <div class="type-card type-c"><div class="type-emoji">🐿️</div><div class="type-name">堅実リス</div><div class="type-desc">コツコツ派の最大の武器は「継続力」</div></div>
+      <div class="type-card type-c"><div class="type-emoji">🐢</div><div class="type-name">コツコツ貯め亀</div><div class="type-desc">確実に前へ。積立投資との相性は最高</div></div>
+      <div class="type-card type-d"><div class="type-emoji">🦔</div><div class="type-name">守りのハリネズミ</div><div class="type-desc">慎重さが最大の盾。「守る」と「増やす」は両立する</div></div>
+      <div class="type-card type-d"><div class="type-emoji">🏹</div><div class="type-name">戦略ハンター</div><div class="type-desc">データと論理で動ける。本格投資向きの希少タイプ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ HOW -->
+<section class="how-bg">
+  <div class="sec-inner" style="max-width:680px;margin:0 auto;text-align:center">
+    <h2 class="sec-title" style="color:#ffd166">使い方はシンプルです</h2>
+    <p class="sec-sub" style="opacity:.7;color:#fff">3ステップ、2分で完了します</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h3>LINEで友だち追加</h3>
+        <p>下のボタンから追加するだけ。名前やメールアドレスの入力は一切ありません。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h3>ボタンを選ぶだけで診断</h3>
+        <p>全部ボタン形式です。文章を書く必要はありません。6〜7問で完了します。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h3>タイプ診断結果と次の一手を受け取る</h3>
+        <p>あなたのお金タイプと、そのタイプに合った証券会社・最初のアクションが届きます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ CTA BAND -->
+<section class="cta-band">
+  <h2>まず、診断だけでもいい。</h2>
+  <p>口座を開設しなくても、比較するだけでも。<br>「自分のタイプを知る」が、最初の一歩です。</p>
+  <a href="https://line.me/R/ti/p/@YOUR_LINE_ID" class="btn-line" style="background:#fff;color:#06C755;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#06C755" width="26" height="26"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.630 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINEで無料診断を始める
+  </a>
+  <p style="margin-top:14px;font-size:13px;opacity:.8">登録無料・個人情報の入力なし</p>
+</section>
+
+<!-- ⑧ FAQ -->
+<section class="faq-bg">
+  <div class="sec-inner">
+    <h2 class="sec-title center">よくある質問</h2>
+    <p class="sec-sub center" style="margin-bottom:28px"></p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Q. 本当に無料ですか？</div>
+        <div class="faq-a">はい、診断も利用もすべて無料です。LINE友だち追加の料金もかかりません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q. 投資の知識が全くないのですが大丈夫ですか？</div>
+        <div class="faq-a">むしろそのくらいの方が向いています。タイプ診断の結果に合わせて「最初にやること」を具体的にお伝えします。難しい説明はしません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q. 診断したら口座を開設しないといけませんか？</div>
+        <div class="faq-a">いいえ。診断だけ、比較ページを見るだけ、でも全然OKです。無理に進める設計にはなっていません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q. 最初いくら用意すればいいですか？</div>
+        <div class="faq-a">SBI証券や楽天証券なら月100円から積立できます。「まとまったお金が必要」というのはイメージと現実のギャップで、始めるだけなら今日の夕食代くらいで十分です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 ハンドリ　｜　<a href="handuri-securities.html">証券会社比較ページ</a>
+　｜　<a href="handuri-privacy.html" style="color:#aaa;">プライバシーポリシー</a>
+</footer>
+
+</body>
+</html>
