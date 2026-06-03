@@ -84,6 +84,11 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .story-icon{font-size:38px;margin-bottom:14px;display:block;margin-top:8px}
 .story-quote{font-size:14px;line-height:1.95;color:var(--text);margin-bottom:16px;font-weight:500}
 .story-tag{display:inline-block;font-size:12px;background:var(--beige2);color:var(--brown2);padding:5px 16px;border-radius:999px;font-weight:700;border:1px solid var(--beige3)}
+.story-tag--top{display:inline-block;font-size:12.5px;font-weight:800;background:var(--beige2);color:var(--brown2);padding:5px 16px;border-radius:999px;border:1px solid var(--beige3);margin-bottom:14px}
+.story-icon-sm{font-size:22px;display:block;margin-top:14px}
+.story-card--featured{border:2px solid var(--brown2);background:linear-gradient(160deg,var(--cream) 0%,#fdf5e8 100%)}
+.story-card--featured .story-tag--top{background:var(--beige2);color:var(--brown2);border-color:var(--beige3)}
+.story-quote--featured{font-size:15px;font-weight:700;color:var(--brown3);line-height:2}
 .timeline-bg{background:linear-gradient(170deg,#f4ede2 0%,#f7ede0 100%);padding:72px 24px;border-top:1px solid var(--beige3);border-bottom:1px solid var(--beige3)}
 .tl-wrap{margin-top:40px;position:relative}
 .tl-wrap::before{content:'';position:absolute;left:21px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--brown2));border-radius:99px}
@@ -284,9 +289,21 @@ calcSim();
     <h2 class="sec-title">始めた人たちのリアルな声</h2>
     <p class="sec-sub">「すごい人」の話じゃなく、「自分に近い人」の話が一番刺さる。</p>
     <div class="story-grid">
-      <div class="story-card"><span class="story-icon">😅</span><p class="story-quote">「3年間ずっと『来月から始めよう』と思ってた。診断したら自分のタイプがわかって、それだけで動けた」</p><span class="story-tag">26歳・会社員・堅実リス型</span></div>
-      <div class="story-card"><span class="story-icon">😌</span><p class="story-quote">「難しそうで避けてたけど、月3,000円から始めたら意外とストレスなかった。もっと早く始めればよかった」</p><span class="story-tag">29歳・看護師・ちょうちょ型</span></div>
-      <div class="story-card"><span class="story-icon">🙌</span><p class="story-quote">「投資信託って聞いてたけど、正直意味わかってなかった。自分のタイプを知ってから選んだら迷わなかった」</p><span class="story-tag">24歳・教員・コツコツ亀型</span></div>
+      <div class="story-card story-card--featured">
+        <span class="story-tag story-tag--top">26歳・会社員・堅実リス型</span>
+        <p class="story-quote story-quote--featured">「3年間ずっと『来月から始めよう』と思ってた。診断したら自分のタイプがわかって、それだけで動けた」</p>
+        <span class="story-icon-sm">📖</span>
+      </div>
+      <div class="story-card">
+        <span class="story-tag story-tag--top">29歳・看護師・ちょうちょ型</span>
+        <p class="story-quote">「難しそうで避けてたけど、月3,000円から始めたら意外とストレスなかった。もっと早く始めればよかった」</p>
+        <span class="story-icon-sm">💻</span>
+      </div>
+      <div class="story-card">
+        <span class="story-tag story-tag--top">24歳・教員・コツコツ亀型</span>
+        <p class="story-quote">「投資信託って聞いてたけど、正直意味わかってなかった。自分のタイプを知ってから選んだら迷わなかった」</p>
+        <span class="story-icon-sm">📊</span>
+      </div>
     </div>
   </div>
 </section>
