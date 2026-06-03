@@ -163,47 +163,7 @@
       line-height:1.75;
     }
 
-    /* result notice */
-    .result-notice{
-      background:var(--cream);
-      border-top:1px solid var(--beige3);
-      border-bottom:1px solid var(--beige3);
-      padding:26px 0;
-    }
-    .result-box{
-      background:linear-gradient(180deg,#fffdf9 0%,#faf3e8 100%);
-      border:1.5px solid var(--beige3);
-      border-radius:20px;
-      padding:22px 22px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-    .result-left h2{
-      font-size:20px;
-      color:var(--brown3);
-      margin-bottom:6px;
-      font-weight:900;
-    }
-    .result-left p{
-      font-size:14px;
-      color:var(--text2);
-      line-height:1.85;
-    }
-    .result-chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:var(--beige2);
-      border:1px solid var(--beige3);
-      border-radius:999px;
-      padding:10px 16px;
-      font-size:13px;
-      font-weight:800;
-      color:var(--brown);
-    }
+    
 
     /* quick nav */
     .quick-grid{
@@ -630,25 +590,89 @@
       }
     }
     @media(max-width:640px){
-      .sec{padding:56px 0}
-      .hero{padding:56px 0 52px}
+      .sec{padding:48px 0}
+      .hero{padding:48px 0 44px}
       .hero-flow,
       .quick-grid,
       .point-grid,
       .steps{
         grid-template-columns:1fr;
       }
-      .company-head{
-        padding:22px 18px 18px;
-      }
-      .company-body{
-        padding:18px 18px 22px;
-      }
-      .company-head-left h3{font-size:26px}
-      .result-box{padding:18px}
-      .btn-primary,.btn-secondary{width:100%;min-width:auto}
+      /* ヒーロー */
+      .hero-inner{padding:0 20px}
+      .hero h1{font-size:clamp(20px,6vw,32px);line-height:1.35}
+      .hero p{font-size:14px}
+      .hero-badge{font-size:11.5px;padding:5px 14px}
+      /* 会社カード */
+      .company-head{padding:20px 16px 16px;flex-direction:column;align-items:flex-start;gap:10px}
+      .company-body{padding:16px 16px 20px}
+      .company-head-left h3{font-size:22px}
+      .company-head-right{width:100%}
+      .btn-primary,.btn-secondary{width:100%;min-width:auto;font-size:14px;padding:14px 16px;box-sizing:border-box}
+      .cta-row{flex-direction:column;gap:10px}
+      /* 比較表 */
+      .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      table{min-width:540px;font-size:13px}
+      th,td{padding:10px 12px}
+      /* タイプカード */
+      .types-grid{grid-template-columns:1fr}
+      .type-card{padding:18px 16px}
+      .type-popup{padding:18px 16px}
+      /* quick-card */
+      .quick-card{padding:16px}
+      /* sec-title */
+      .sec-title{font-size:clamp(18px,5vw,26px)}
+      .sec-sub{font-size:13.5px}
+      /* final-cta */
+      .final-cta{padding:48px 20px}
+      .final-cta h2{font-size:clamp(18px,5.5vw,26px)}
+      .final-cta .btn-primary{width:100%;box-sizing:border-box}
+      /* fit-box */
+      .fit-box{font-size:13.5px;padding:16px}
     }
-  </style>
+    @media(max-width:380px){
+      .hero h1{font-size:19px}
+      .company-head-left h3{font-size:20px}
+      table{min-width:460px;font-size:12px}
+    }
+  /* ===== TYPES ===== */
+.types-bg{background:var(--beige);padding:72px 24px}
+.types-bg .sec-inner{max-width:800px}
+.types-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+.type-card{background:var(--cream);border:1.5px solid var(--beige3);border-radius:20px;padding:22px 18px;cursor:pointer;transition:transform .2s,box-shadow .2s;user-select:none;position:relative;overflow:hidden}
+.type-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.type-card:nth-child(1)::before,.type-card:nth-child(2)::before{background:linear-gradient(90deg,#6b9bd2,#3b6ea8)}
+.type-card:nth-child(3)::before,.type-card:nth-child(4)::before{background:linear-gradient(90deg,#9b6bd2,#6b3ba8)}
+.type-card:nth-child(5)::before,.type-card:nth-child(6)::before{background:linear-gradient(90deg,var(--line),var(--line2))}
+.type-card:nth-child(7)::before,.type-card:nth-child(8)::before{background:linear-gradient(90deg,#d27a4a,#a85028)}
+.type-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(107,79,46,.1)}
+.type-emoji-lg{font-size:30px;margin-bottom:8px;display:block;margin-top:4px}
+.type-name{font-size:15px;font-weight:800;margin-bottom:4px;color:var(--brown3)}
+.type-tagline{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:12px;font-weight:500}
+.type-tap-hint{font-size:11.5px;color:var(--beige-dark);display:flex;align-items:center;gap:5px;font-weight:600}
+.type-tap-hint::before{content:'▼';font-size:9px}
+
+/* 吹き出し */
+.type-popup{display:none;position:absolute;left:0;right:0;top:calc(100% + 10px);background:var(--cream);color:var(--text);border-radius:16px;padding:20px;box-shadow:0 14px 40px rgba(107,79,46,.14);z-index:100;border:1.5px solid var(--beige3);text-align:left}
+.type-popup::before{content:'';position:absolute;top:-8px;left:32px;width:14px;height:14px;background:var(--cream);border-left:1.5px solid var(--beige3);border-top:1.5px solid var(--beige3);transform:rotate(45deg)}
+.type-popup.active{display:block}
+.popup-title{font-size:14px;font-weight:800;color:var(--brown3);margin-bottom:12px}
+.popup-strengths{margin-bottom:12px}
+.popup-strengths p{font-size:12px;font-weight:800;color:var(--brown2);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
+.popup-strengths ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:4px}
+.popup-strengths ul li{font-size:13px;color:var(--text2);line-height:1.65;padding-left:16px;position:relative;font-weight:500}
+.popup-strengths ul li::before{content:'✓';position:absolute;left:0;color:var(--line2);font-size:11px;top:2px;font-weight:800}
+.popup-caution{font-size:13px;color:var(--brown);background:rgba(200,146,42,.08);border-radius:10px;padding:10px 12px;line-height:1.7;margin-bottom:12px;border:1px solid rgba(200,146,42,.2);font-weight:500}
+.popup-step{font-size:13px;color:var(--text2);line-height:1.75;font-weight:500;margin-bottom:12px}
+.popup-step strong{color:var(--brown3);font-weight:800}
+/* MODIFIED: ポップアップ内CTAボタン */
+.popup-cta{display:block;background:var(--brown3);color:var(--cream);font-size:13px;font-weight:800;padding:11px 16px;border-radius:12px;text-align:center;text-decoration:none;transition:.2s;margin-top:4px}
+.popup-cta:hover{opacity:.85}
+.popup-close{position:absolute;top:12px;right:14px;font-size:20px;cursor:pointer;color:var(--beige-dark);line-height:1;font-weight:300}
+.type-wrapper{position:relative}
+
+
+</style>
 </head>
 <body>
 
@@ -666,7 +690,7 @@
           <div class="flow-card">
             <div class="flow-step">STEP 1</div>
             <h3>タイプを知る</h3>
-            <p>LINE診断で、自分が「慎重派」か「行動派」かを把握する。</p>
+            <p>タイプ診断で、自分が「慎重派」か「行動派」かを把握する。</p>
           </div>
           <div class="flow-card">
             <div class="flow-step">STEP 2</div>
@@ -683,20 +707,7 @@
     </div>
   </section>
 
-  <section class="result-notice">
-    <div class="wrap">
-      <div class="result-box">
-        <div class="result-left">
-          <h2>診断結果から来た人へ</h2>
-          <p>
-            下の一覧から、診断でおすすめされた証券会社をそのまま見てください。<br>
-            迷う人は、まず <strong style="color:var(--brown3)">SBI証券 or 楽天証券</strong> のどちらかを選べば大きく外しません。
-          </p>
-        </div>
-        <div class="result-chip">初心者は「迷わず始められるか」で選ぶのが正解</div>
-      </div>
-    </div>
-  </section>
+  
 
   <section class="sec">
     <div class="wrap">
@@ -1050,6 +1061,171 @@
       </div>
     </div>
   </section>
+
+  <section class="types-bg">
+  <div class="sec-inner">
+    <span class="sec-label">YOUR TYPE</span>
+    <h2 class="sec-title">タイプ別おすすめ一覧</h2>
+    <p class="sec-sub">診断結果を見たあとに、「自分のタイプに近いのはどれか」を確認したい人向けに一覧化しました。カードをタップすると、おすすめ証券会社まで確認できます。</p>
+    <div class="types-grid">
+
+      <!-- MODIFIED: 各ポップアップに .popup-cta リンクを追加 (securities.html#anchor) -->
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('butterfly')">
+          <span class="type-emoji-lg">🦋</span>
+          <div class="type-name">跳躍前のちょうちょ</div>
+          <div class="type-tagline">準備は整ってる。あとは最初の一歩だけ</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-butterfly">
+          <span class="popup-close" onclick="closePopup('butterfly',event)">×</span>
+          <div class="popup-title">🦋 跳躍前のちょうちょ</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>理解してから動く誠実さ</li><li>始めたら長く続けられる継続力</li><li>感情より論理で判断できる冷静さ</li></ul></div>
+          <div class="popup-caution">⚠ 考えすぎて「始めない」が一番のリスクになっています。</div>
+          <div class="popup-step">→ <strong>SBI証券</strong>で月100円から積立スタート。「口座を持つ」という事実が次の行動を変えます。</div>
+          <a href="#sbi" class="popup-cta">SBI証券について詳しく見る →</a>
+        </div>
+      </div>
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('rocket')">
+          <span class="type-emoji-lg">🚀</span>
+          <div class="type-name">行動ロケット</div>
+          <div class="type-tagline">直感で動ける。仕組みさえ作れば最強</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-rocket">
+          <span class="popup-close" onclick="closePopup('rocket',event)">×</span>
+          <div class="popup-title">🚀 行動ロケット</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>チャンスを直感で掴める行動力</li><li>変化に強く情報収集が速い</li><li>人より早くスタートラインに立てる</li></ul></div>
+          <div class="popup-caution">⚠ 熱量のまま動くと管理が追いつかなくなることがあります。続ける仕組みを意識して。</div>
+          <div class="popup-step">→ <strong>松井証券</strong>のNISA成長投資枠で本格スタート。手数料ゼロ・分析ツール充実。</div>
+          <a href="#matsui" class="popup-cta">松井証券について詳しく見る →</a>
+        </div>
+      </div>
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('eagle')">
+          <span class="type-emoji-lg">🦅</span>
+          <div class="type-name">飛躍のワシ</div>
+          <div class="type-tagline">大局を見て、ここぞで動ける戦略家</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-eagle">
+          <span class="popup-close" onclick="closePopup('eagle',event)">×</span>
+          <div class="popup-title">🦅 飛躍のワシ</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>大局を見て判断できる俯瞰力</li><li>損失をデータで受け止められるメンタル</li><li>長期的なビジョンで動ける戦略眼</li></ul></div>
+          <div class="popup-caution">⚠ 自信があるぶん「分散」を軽視しやすい。ワシは翼を広げてこそ強いです。</div>
+          <div class="popup-step">→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。豊富な分析ツールが力になります。</div>
+          <a href="#matsui" class="popup-cta">松井証券について詳しく見る →</a>
+        </div>
+      </div>
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('dolphin')">
+          <span class="type-emoji-lg">🐬</span>
+          <div class="type-name">慎重イルカ</div>
+          <div class="type-tagline">好奇心はある。「続く仕組み」が鍵</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-dolphin">
+          <span class="popup-close" onclick="closePopup('dolphin',event)">×</span>
+          <div class="popup-title">🐬 慎重イルカ</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>トレンドをいち早くキャッチできる</li><li>柔軟に方向転換できる</li><li>人との共感力が高い</li></ul></div>
+          <div class="popup-caution">⚠ 感情に連動して売買するとじわじわ損をしていきます。「考えなくていい仕組み」が大事。</div>
+          <div class="popup-step">→ <strong>ウェルスナビ</strong>で入金するだけのAI自動運用がおすすめ。</div>
+          <a href="#wealth" class="popup-cta">ウェルスナビについて詳しく見る →</a>
+        </div>
+      </div>
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('squirrel')">
+          <span class="type-emoji-lg">🐿️</span>
+          <div class="type-name">堅実リス</div>
+          <div class="type-tagline">コツコツ派の最大の武器は「継続力」</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-squirrel">
+          <span class="popup-close" onclick="closePopup('squirrel',event)">×</span>
+          <div class="popup-title">🐿️ 堅実リス</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>無駄遣いをしない自制心</li><li>安全かどうかを先に確認する慎重さ</li><li>長く続けられる安定感</li></ul></div>
+          <div class="popup-caution">⚠ 貯金だけでは物価上昇にじわじわ負けていきます。「リスクを取らないこと」にもリスクがあります。</div>
+          <div class="popup-step">→ <strong>楽天証券</strong>で全世界株式を月3,000円だけ積立。楽天ポイントも貯まります。</div>
+          <a href="#rakuten" class="popup-cta">楽天証券について詳しく見る →</a>
+        </div>
+      </div>
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('turtle')">
+          <span class="type-emoji-lg">🐢</span>
+          <div class="type-name">コツコツ貯め亀</div>
+          <div class="type-tagline">確実に前へ。積立投資との相性は最高</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-turtle">
+          <span class="popup-close" onclick="closePopup('turtle',event)">×</span>
+          <div class="popup-title">🐢 コツコツ貯め亀</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>計画を立てて着実に実行できる</li><li>目先の変動に動じない安定したメンタル</li><li>「続けること」を苦にしない持続力</li></ul></div>
+          <div class="popup-caution">⚠ 比較しすぎて始められないことがあります。時間という最大の資産が減っていきます。</div>
+          <div class="popup-step">→ <strong>SBI証券</strong>でS&P500インデックスファンドを月5,000円から。これだけで十分です。</div>
+          <a href="#sbi" class="popup-cta">SBI証券について詳しく見る →</a>
+        </div>
+      </div>
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('hedgehog')">
+          <span class="type-emoji-lg">🦔</span>
+          <div class="type-name">守りのハリネズミ</div>
+          <div class="type-tagline">慎重さが最大の盾。「守る」と「増やす」は両立する</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-hedgehog">
+          <span class="popup-close" onclick="closePopup('hedgehog',event)">×</span>
+          <div class="popup-title">🦔 守りのハリネズミ</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>危ない選択を直感で避けられる嗅覚</li><li>長期的な安心を優先できる自制心</li><li>「守る」ことへの強いコミットメント</li></ul></div>
+          <div class="popup-caution">⚠ 針を立てたまま動かないでいるとチャンスも近づけなくなります。</div>
+          <div class="popup-step">→ <strong>楽天証券</strong>のバランス型ファンドで株・債券・不動産を自動分散。全部任せるから始めるのが◎</div>
+          <a href="#rakuten" class="popup-cta">楽天証券について詳しく見る →</a>
+        </div>
+      </div>
+
+      <div class="type-wrapper">
+        <div class="type-card" onclick="togglePopup('hunter')">
+          <span class="type-emoji-lg">🏹</span>
+          <div class="type-name">戦略ハンター</div>
+          <div class="type-tagline">データと論理で動ける。本格投資向きの希少タイプ</div>
+          <div class="type-tap-hint">タップして詳細を見る</div>
+        </div>
+        <div class="type-popup" id="popup-hunter">
+          <span class="popup-close" onclick="closePopup('hunter',event)">×</span>
+          <div class="popup-title">🏹 戦略ハンター</div>
+          <div class="popup-strengths"><p>強み</p><ul><li>データと論理でリスクを管理できる</li><li>感情ではなくルールで売買できる自律性</li><li>目標から逆算して行動を決める戦略性</li></ul></div>
+          <div class="popup-caution">⚠ 計画への自信が強いぶん想定外への対応が遅れることがあります。「余白」を残しておきましょう。</div>
+          <div class="popup-step">→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。分析ツールが豊富で戦略ハンタータイプと相性◎</div>
+          <a href="#matsui" class="popup-cta">松井証券について詳しく見る →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function togglePopup(id){
+  var popup=document.getElementById('popup-'+id);
+  var isActive=popup.classList.contains('active');
+  document.querySelectorAll('.type-popup').forEach(function(p){p.classList.remove('active')});
+  if(!isActive) popup.classList.add('active');
+}
+function closePopup(id,event){
+  document.getElementById('popup-'+id).classList.remove('active');
+  event.stopPropagation();
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.type-wrapper')) document.querySelectorAll('.type-popup').forEach(function(p){p.classList.remove('active')});
+});
+</script>
 
   <section id="comparison" class="sec">
     <div class="wrap">
