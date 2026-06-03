@@ -24,8 +24,6 @@
   --gold:#c8922a;
 }
 body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--beige);color:var(--text);line-height:1.85;overflow-x:hidden;font-size:16px}
-
-/* ===== HERO ===== */
 .hero{background:linear-gradient(170deg,#fdf9f3 0%,#f7ede0 100%);border-bottom:2px solid var(--beige3);padding:72px 24px 64px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'💴';position:absolute;top:32px;right:5%;font-size:72px;opacity:.07;transform:rotate(15deg);pointer-events:none}
 .hero::after{content:'📈';position:absolute;bottom:32px;left:5%;font-size:64px;opacity:.06;transform:rotate(-8deg);pointer-events:none}
@@ -38,20 +36,12 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .hero-sub strong{color:var(--brown3);font-weight:800}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--beige2);border:1.5px solid var(--beige3);color:var(--brown);padding:10px 20px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:38px;text-align:left}
 .hero-pill::before{content:'📊';font-size:15px;flex-shrink:0}
-.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--line),var(--line2));color:#fff;font-size:16px;font-weight:800;padding:18px 36px;border-radius:16px;text-decoration:none;box-shadow:0 6px 24px rgba(6,199,85,.35);transition:transform .2s,box-shadow .2s;letter-spacing:.02em;width:100%;max-width:380px}
-.btn-line:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(6,199,85,.45)}
-.btn-line svg{width:24px;height:24px;flex-shrink:0}
 .hero-note{margin-top:14px;font-size:12.5px;color:var(--text2);letter-spacing:.04em}
-
-/* ===== SECTION COMMON ===== */
-.sec{padding:72px 24px}
 .sec-inner{max-width:720px;margin:0 auto}
 .sec-label{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--brown2);margin-bottom:14px;background:var(--beige2);padding:4px 14px;border-radius:999px;border:1px solid var(--beige3)}
 .sec-title{font-size:clamp(22px,4vw,34px);font-weight:900;line-height:1.35;margin-bottom:12px;color:var(--brown3)}
 .sec-title em{font-style:normal;background:linear-gradient(to bottom,transparent 60%,rgba(200,146,42,.2) 60%)}
 .sec-sub{font-size:15px;color:var(--text2);margin-bottom:40px;line-height:1.9}
-
-/* ===== REALITY ===== */
 .reality{background:linear-gradient(170deg,#f4ede2 0%,#ede1d0 100%);padding:72px 24px;border-top:1px solid var(--beige3);border-bottom:1px solid var(--beige3)}
 .rc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .rc-card{background:var(--cream);border:1.5px solid var(--beige3);border-radius:20px;padding:24px 20px;transition:transform .15s}
@@ -61,8 +51,6 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .rc-card:nth-child(even) .rc-num{color:var(--pop)}
 .rc-label{font-size:13px;color:var(--text2);line-height:1.75;font-weight:500}
 .rc-note{margin-top:24px;background:var(--cream);border-left:4px solid var(--gold);border-radius:0 14px 14px 0;padding:18px 22px;font-size:14px;color:var(--brown);line-height:1.85;font-weight:500}
-
-/* ===== SIMULATOR ===== */
 .sim-bg{background:var(--beige);padding:72px 24px}
 .sim-box{background:var(--cream);border:1.5px solid var(--beige3);border-radius:22px;padding:28px 22px;margin-top:8px}
 .sim-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
@@ -79,25 +67,11 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .sim-result-row.highlight .value{color:var(--line2);font-size:20px;font-weight:900}
 .sim-note{font-size:12px;color:var(--beige-dark);margin-top:14px;line-height:1.65}
 .inflation-box{margin-top:16px;background:rgba(200,146,42,.08);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--brown);line-height:1.8;border:1px solid rgba(200,146,42,.25)}
-
-/* ===== シミュレーター結果CTA ===== */
-/* MODIFIED: シミュレーター直下のCTAを追加 */
 .sim-cta{margin-top:20px;background:linear-gradient(145deg,rgba(6,199,85,.06),rgba(6,199,85,.02));border:1.5px solid rgba(6,199,85,.18);border-radius:16px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .sim-cta p{font-size:14px;color:var(--brown3);line-height:1.75;font-weight:700}
 .sim-cta p span{display:block;font-size:13px;color:var(--text2);font-weight:500;margin-top:3px}
-.sim-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--brown3);color:var(--cream);font-size:14px;font-weight:800;padding:12px 20px;border-radius:12px;text-decoration:none;white-space:nowrap;transition:.2s}
-.sim-cta a:hover{opacity:.85;transform:translateY(-2px)}
-
-/* ===== 証券会社CTA ===== */
-.sec-cta{background:linear-gradient(170deg,#f4ede2 0%,#ede1d0 100%);padding:72px 24px;text-align:center;border-top:1px solid var(--beige3);border-bottom:1px solid var(--beige3)}
-.step-badge{display:inline-block;background:var(--cream);border:1.5px solid var(--beige3);color:var(--brown2);padding:5px 18px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.1em;margin-bottom:20px}
-.sec-cta h2{font-size:clamp(20px,3.8vw,30px);font-weight:900;color:var(--brown3);line-height:1.4;margin-bottom:14px}
-.sec-cta p{font-size:14.5px;color:var(--text2);margin-bottom:36px;line-height:1.9;font-weight:500}
 .btn-brown{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--brown3);color:var(--cream);font-size:16px;font-weight:800;padding:18px 36px;border-radius:16px;text-decoration:none;box-shadow:0 4px 18px rgba(46,28,14,.2);transition:transform .2s,opacity .2s;letter-spacing:.02em;width:100%;max-width:360px}
 .btn-brown:hover{transform:translateY(-2px);opacity:.88}
-.sec-cta-note{margin-top:14px;font-size:12.5px;color:var(--text2)}
-
-/* ===== STORIES ===== */
 .stories{background:var(--beige);padding:72px 24px}
 .stories .sec-inner{max-width:920px}
 .story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
@@ -110,109 +84,46 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .story-icon{font-size:38px;margin-bottom:14px;display:block;margin-top:8px}
 .story-quote{font-size:14px;line-height:1.95;color:var(--text);margin-bottom:16px;font-weight:500}
 .story-tag{display:inline-block;font-size:12px;background:var(--beige2);color:var(--brown2);padding:5px 16px;border-radius:999px;font-weight:700;border:1px solid var(--beige3)}
-
-/* ===== TIMELINE ===== */
 .timeline-bg{background:linear-gradient(170deg,#f4ede2 0%,#f7ede0 100%);padding:72px 24px;border-top:1px solid var(--beige3);border-bottom:1px solid var(--beige3)}
 .tl-wrap{margin-top:40px;position:relative}
 .tl-wrap::before{content:'';position:absolute;left:21px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--brown2));border-radius:99px}
 .tl-item{display:flex;gap:22px;margin-bottom:26px;align-items:flex-start}
 .tl-dot{width:44px;height:44px;border-radius:50%;background:var(--cream);border:2px solid var(--beige3);color:var(--brown2);font-weight:800;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;text-align:center;line-height:1.3;box-shadow:0 2px 8px rgba(0,0,0,.07)}
 .tl-body{background:var(--cream);border-radius:16px;padding:16px 18px;flex:1;border:1.5px solid var(--beige3)}
-.tl-body h4{font-size:14.5px;font-weight:800;color:var(--brown3);margin-bottom:6px}
-.tl-body p{font-size:13.5px;color:var(--text2);line-height:1.8;font-weight:500}
-.tl-action{margin-top:10px;background:var(--brown3);border-radius:20px;padding:24px 26px;color:var(--beige)}
-.tl-action h4{font-size:15px;font-weight:800;color:#f5e6d0;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.tl-action p{font-size:14px;line-height:2.1;color:rgba(245,230,208,.9)}
-.tl-action strong{color:#f5d59a;font-weight:800}
-/* MODIFIED: タイムラインCTA内のリンク */
-.tl-action a{color:#f5d59a;font-weight:800;text-decoration:underline;text-underline-offset:3px}
-.tl-action a:hover{opacity:.85}
-
-/* ===== HOW ===== */
+.tl-title{font-weight:800;font-size:15px;color:var(--brown3);margin-bottom:6px}
+.tl-text{font-size:13.5px;color:var(--text2);line-height:1.8}
 .how-bg{background:linear-gradient(170deg,#f4ede2 0%,#ede1d0 100%);padding:72px 24px;border-top:1px solid var(--beige3);border-bottom:1px solid var(--beige3)}
-.how-inner{max-width:580px;margin:0 auto}
-.how-inner h2{font-size:clamp(20px,3.8vw,30px);font-weight:900;color:var(--brown3);margin-bottom:8px}
-.how-inner .lead{font-size:14.5px;color:var(--text2);margin-bottom:44px;font-weight:500}
-.steps{display:flex;flex-direction:column}
-.step{display:flex;align-items:flex-start;gap:18px;padding:22px 0;border-bottom:1px solid var(--beige3)}
-.step:last-child{border:none}
-.step-num{width:40px;height:40px;border-radius:12px;background:var(--brown3);color:var(--cream);font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.step-text h3{font-size:15.5px;font-weight:800;color:var(--brown3);margin-bottom:5px}
-.step-text p{font-size:13.5px;color:var(--text2);line-height:1.75;font-weight:500}
-
-/* ===== CTA ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num{width:42px;height:42px;border-radius:50%;background:var(--brown3);color:var(--cream);font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-text h3{font-size:15px;font-weight:800;color:var(--brown3);margin-bottom:6px}
+.step-text p{font-size:13.5px;color:var(--text2);line-height:1.75}
 .cta-band{background:linear-gradient(145deg,#eee1ce 0%,#e4d5bc 100%);padding:72px 24px;text-align:center;border-top:1px solid var(--beige-dark)}
 .cta-band h2{font-size:clamp(22px,4.2vw,34px);font-weight:900;margin-bottom:14px;color:var(--brown3)}
 .cta-band p{font-size:14.5px;color:var(--text2);margin-bottom:38px;line-height:1.9;font-weight:500}
-
-/* ===== FAQ ===== */
 .faq-bg{background:linear-gradient(170deg,#f4ede2 0%,#f7ede0 100%);padding:72px 24px;border-top:1px solid var(--beige3)}
-.faq-list{margin-top:8px;display:flex;flex-direction:column;gap:14px}
-.faq-item{background:var(--cream);border-radius:18px;padding:22px 24px;border:1.5px solid var(--beige3)}
-.faq-q{font-size:15px;font-weight:800;color:var(--brown3);margin-bottom:10px;display:flex;align-items:flex-start;gap:12px}
-.faq-q::before{content:'Q';display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:var(--brown3);color:var(--cream);border-radius:8px;font-size:12px;font-weight:900;flex-shrink:0;margin-top:1px}
-.faq-a{font-size:13.5px;color:var(--text2);line-height:1.95;padding-left:38px;font-weight:500}
-
-/* ===== FOOTER ===== */
-footer{text-align:center;padding:28px 20px;font-size:12.5px;color:var(--text2);background:var(--beige3);border-top:1px solid var(--beige-dark)}
-footer a{color:var(--text2);text-decoration:none}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:540px){
-  .rc-grid{grid-template-columns:1fr}
-  .types-grid{grid-template-columns:1fr}
-  .hero-sub{text-align:left}
-  .hero-pill{text-align:left}
-  .btn-line{font-size:15px;padding:16px 24px}
-  .btn-brown{font-size:15px;padding:16px 24px;width:100%;box-sizing:border-box;display:block;text-align:center}
-  .sim-cta{flex-direction:column;align-items:stretch}
-  .sim-cta a,.sim-cta button{width:100%;justify-content:center;box-sizing:border-box}
-  .hero-inner{padding:56px 20px 40px}
-  h1{font-size:clamp(22px,6.5vw,36px)}
-  .sec-title{font-size:clamp(18px,5vw,26px)}
-  .rc-card{padding:20px 18px}
-  .diag-modal{padding:24px 18px;border-radius:18px}
-  .diag-result-cta,.diag-result-compare-btn{font-size:14px;padding:14px 16px;border-radius:12px}
-  .step{gap:12px}
-  .step-num{width:36px;height:36px;font-size:15px;flex-shrink:0}
-  .stories-grid{grid-template-columns:1fr}
-  .timeline-list{padding-left:16px}
-  .sim-labels{font-size:12px}
-  .cta-band h2{font-size:clamp(18px,5.5vw,26px)}
-  .cta-band .btn-brown{width:100%;box-sizing:border-box}
-  .sec-cta h2{font-size:clamp(18px,5vw,24px)}
-  .faq-q{font-size:14px}
-  .faq-a{font-size:13.5px}
-  /* ヒーローボタン群の縦並び */
-  .hero-btns{flex-direction:column;align-items:stretch}
-  .hero-btns>*{width:100%;text-align:center}
-}
-@media(max-width:380px){
-  h1{font-size:20px}
-  .diag-modal{padding:20px 14px}
-  .hero-badge{font-size:11px}
-}
-
-
-.diag-result-compare-btn{display:block;background:var(--beige2);color:var(--brown3);border:1.5px solid var(--beige3);font-size:14px;font-weight:700;padding:13px 24px;border-radius:14px;text-align:center;text-decoration:none;margin-bottom:10px;transition:background .2s,border-color .2s}
-.diag-result-compare-btn:hover{background:var(--beige3);border-color:var(--beige-dark)}
-.diag-result-all-compare{display:block;font-size:12.5px;color:var(--text2);text-align:center;text-decoration:underline;text-underline-offset:3px;margin-bottom:16px}
-
-/* ===== 診断モーダル ===== */
+.faq-list{margin-top:8px}
+.faq-item{border-bottom:1px solid var(--beige3);padding:18px 0}
+.faq-item:last-child{border:none}
+.faq-q{font-weight:800;font-size:15px;color:var(--brown3);margin-bottom:8px}
+.faq-q::before{content:'Q. ';color:var(--gold)}
+.faq-a{font-size:14px;color:var(--text2);line-height:1.85}
+.faq-a::before{content:'A. ';font-weight:700;color:var(--brown2)}
 .diag-modal-overlay{display:none;position:fixed;inset:0;background:rgba(42,31,18,.55);z-index:1000;align-items:center;justify-content:center;padding:16px}
 .diag-modal-overlay.open{display:flex}
-.diag-modal{background:var(--cream);border-radius:24px;padding:32px 28px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 24px 64px rgba(42,31,18,.22);border:1.5px solid var(--beige3)}
-.diag-modal-close{position:absolute;top:14px;right:18px;font-size:22px;cursor:pointer;color:var(--beige-dark);line-height:1;background:none;border:none;font-weight:300}
-.diag-progress{display:flex;gap:6px;margin-bottom:28px}
-.diag-progress-dot{flex:1;height:4px;border-radius:99px;background:var(--beige3);transition:background .3s}
-.diag-progress-dot.done{background:var(--brown2)}
-.diag-progress-dot.active{background:var(--brown)}
+.diag-modal{background:var(--cream);border-radius:24px;padding:32px 28px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.diag-modal-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text2);line-height:1;padding:4px}
+.diag-progress{display:flex;gap:8px;margin-bottom:24px;justify-content:center}
+.diag-progress-dot{width:8px;height:8px;border-radius:50%;background:var(--beige3);transition:background .3s}
+.diag-progress-dot.active{background:var(--brown2)}
 .diag-step{display:none}
 .diag-step.active{display:block}
-.diag-q{font-size:16px;font-weight:800;color:var(--brown3);line-height:1.6;margin-bottom:20px}
-.diag-q .diag-q-sub{display:block;font-size:13px;font-weight:500;color:var(--text2);margin-top:6px;line-height:1.7}
-.diag-choices{display:flex;flex-direction:column;gap:10px}
-.diag-btn{background:var(--beige);border:1.5px solid var(--beige3);border-radius:14px;padding:14px 18px;font-size:14px;font-weight:600;color:var(--brown3);text-align:left;cursor:pointer;transition:background .15s,border-color .15s,transform .1s;line-height:1.5}
+.diag-result{display:none}
+.diag-result.active{display:block}
+.diag-q{font-size:17px;font-weight:900;color:var(--brown3);margin-bottom:6px;line-height:1.5}
+.diag-q-sub{display:block;font-size:12.5px;color:var(--text2);font-weight:500;margin-top:6px;line-height:1.6}
+.diag-choices{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.diag-btn{background:var(--beige);border:1.5px solid var(--beige3);border-radius:14px;padding:14px 18px;text-align:left;font-size:14px;font-weight:600;color:var(--brown3);cursor:pointer;transition:background .15s,border-color .15s,transform .1s;line-height:1.5}
 .diag-btn:hover{background:var(--beige2);border-color:var(--beige-dark);transform:translateY(-1px)}
 .diag-btn:active{transform:translateY(0)}
 .diag-mbti-input{width:100%;border:1.5px solid var(--beige3);border-radius:12px;padding:13px 16px;font-size:15px;font-weight:700;color:var(--brown3);background:var(--beige);outline:none;letter-spacing:.1em;margin-bottom:10px}
@@ -220,30 +131,24 @@ footer a{color:var(--text2);text-decoration:none}
 .diag-mbti-next{background:var(--brown3);color:var(--cream);border:none;border-radius:12px;padding:13px 24px;font-size:14px;font-weight:800;cursor:pointer;width:100%;transition:opacity .2s}
 .diag-mbti-next:hover{opacity:.85}
 .diag-skip{margin-top:10px;font-size:12.5px;color:var(--text2);text-align:center;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-/* 結果表示 */
-.diag-result{display:none;text-align:center}
-.diag-result.active{display:block}
-.diag-result-emoji{font-size:56px;margin-bottom:12px;display:block}
-.diag-result-type{font-size:20px;font-weight:900;color:var(--brown3);margin-bottom:8px}
-.diag-result-tagline{font-size:14px;color:var(--text2);margin-bottom:20px;line-height:1.75}
-.diag-result-strengths{background:var(--beige);border-radius:14px;padding:16px 18px;margin-bottom:16px;text-align:left}
-.diag-result-strengths h4{font-size:12px;font-weight:800;color:var(--brown2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
-.diag-result-strengths ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
-.diag-result-strengths ul li{font-size:13.5px;color:var(--text);padding-left:18px;position:relative;font-weight:500;line-height:1.65}
-.diag-result-strengths ul li::before{content:'✓';position:absolute;left:0;color:var(--line2);font-size:11px;top:2px;font-weight:800}
-.diag-result-caution{background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.22);border-radius:12px;padding:13px 16px;font-size:13px;color:var(--brown);line-height:1.75;margin-bottom:16px;text-align:left}
-.diag-result-step{font-size:13.5px;color:var(--text2);line-height:1.8;margin-bottom:18px;text-align:left;background:var(--beige2);border-radius:12px;padding:13px 16px}
-.diag-result-step strong{color:var(--brown3);font-weight:800}
-.diag-result-cta{display:block;background:var(--brown3);color:var(--cream);font-size:15px;font-weight:800;padding:16px 24px;border-radius:14px;text-align:center;text-decoration:none;margin-bottom:10px;transition:opacity .2s}
-.diag-result-cta:hover{opacity:.85}
-.diag-result-compare{display:block;font-size:13px;color:var(--brown2);text-align:center;text-decoration:underline;text-underline-offset:3px;margin-bottom:16px}
-.diag-restart{font-size:12.5px;color:var(--text2);text-align:center;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.diag-loan-note{font-size:12.5px;color:var(--brown);background:rgba(200,146,42,.06);border-radius:10px;padding:10px 13px;margin-bottom:14px;line-height:1.75;text-align:left;border:1px solid rgba(200,146,42,.18)}
-@media(max-width:540px){
-  .diag-modal{padding:24px 18px;border-radius:18px}
-}
-
-
+.diag-result-inner{text-align:center}
+.diag-result-emoji{font-size:52px;margin-bottom:8px;display:block}
+.diag-result-name{font-size:22px;font-weight:900;color:var(--brown3);margin-bottom:4px}
+.diag-result-tagline{font-size:14px;color:var(--text2);margin-bottom:18px;line-height:1.7}
+.diag-result-strengths{text-align:left;background:var(--beige);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.diag-result-strengths p{font-size:12px;font-weight:800;color:var(--brown2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em}
+.diag-result-strengths ul{list-style:none}
+.diag-result-strengths ul li{font-size:13.5px;color:var(--text2);padding:4px 0 4px 18px;position:relative;line-height:1.6}
+.diag-result-strengths ul li::before{content:'✓';position:absolute;left:0;color:var(--line2);font-weight:800}
+.diag-result-caution{font-size:13px;color:var(--pop);margin-bottom:12px;line-height:1.7;font-weight:600;text-align:left;background:rgba(232,96,60,.05);border-radius:10px;padding:10px 14px}
+.diag-result-step{font-size:13.5px;color:var(--brown);line-height:1.8;margin-bottom:18px;text-align:left;background:rgba(200,146,42,.07);border-radius:10px;padding:10px 14px}
+.diag-result-cta{display:block;background:linear-gradient(135deg,var(--brown),var(--brown2));color:var(--cream);font-size:15px;font-weight:800;padding:16px 24px;border-radius:14px;text-align:center;text-decoration:none;margin-bottom:10px;box-shadow:0 4px 16px rgba(107,79,46,.28);transition:opacity .2s,transform .2s}
+.diag-result-cta:hover{opacity:.88;transform:translateY(-2px)}
+.diag-result-compare-btn{display:block;background:var(--beige2);color:var(--brown3);border:1.5px solid var(--beige3);font-size:14px;font-weight:700;padding:13px 24px;border-radius:14px;text-align:center;text-decoration:none;margin-bottom:10px;transition:background .2s,border-color .2s}
+.diag-result-compare-btn:hover{background:var(--beige3);border-color:var(--beige-dark)}
+.diag-result-all-compare{display:block;font-size:12.5px;color:var(--text2);text-align:center;text-decoration:underline;text-underline-offset:3px;margin-bottom:16px}
+.diag-restart{margin-top:14px;font-size:12.5px;color:var(--text2);text-align:center;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.diag-loan-note{background:rgba(232,96,60,.07);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--pop);margin-bottom:14px;line-height:1.7;text-align:left}
 .mbti-list-wrap{background:var(--beige);border:1px solid var(--beige3);border-radius:14px;padding:14px 16px;margin-bottom:12px;font-size:12.5px;line-height:1.9;color:var(--brown3)}
 .mbti-group{margin-bottom:10px}
 .mbti-group:last-child{margin-bottom:0}
@@ -251,23 +156,48 @@ footer a{color:var(--text2);text-decoration:none}
 .mbti-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px}
 .mbti-item{font-size:12.5px;color:var(--text2);white-space:nowrap}
 .mbti-item strong{color:var(--brown3);font-weight:800}
+footer{text-align:center;padding:28px 20px;font-size:12.5px;color:var(--text2);background:var(--beige3);border-top:1px solid var(--beige-dark)}
+footer a{color:var(--text2);text-decoration:none}
+@media(max-width:540px){
+  .rc-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .hero-sub{text-align:left}
+  .btn-brown{font-size:15px;padding:16px 24px;width:100%;box-sizing:border-box;display:block;text-align:center}
+  .sim-cta{flex-direction:column;align-items:stretch}
+  .sim-cta button{width:100%;justify-content:center;box-sizing:border-box}
+  .sec-title{font-size:clamp(18px,5vw,26px)}
+  .diag-modal{padding:24px 18px;border-radius:18px}
+  .cta-band h2{font-size:clamp(18px,5.5vw,26px)}
+  .cta-band .btn-brown{width:100%;box-sizing:border-box}
+  .faq-q{font-size:14px}
+  .faq-a{font-size:13.5px}
+}
+@media(max-width:380px){
+  .hero h1{font-size:20px}
+  .diag-modal{padding:20px 14px}
+  .hero-badge{font-size:11px}
+}
 </style>
+</head>
 <body>
 
 <section class="hero">
   <div class="hero-inner">
+    <div class="hero-logo" style="margin-bottom:18px">
+      <span style="font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--brown2);text-transform:uppercase;display:block;margin-bottom:4px">HANDORI</span>
+      <span style="font-size:28px;font-weight:900;color:var(--brown3);display:block;letter-spacing:-.01em">ハンドリ</span>
+    </div>
+    <div class="hero-service-desc" style="background:var(--cream);border:1.5px solid var(--beige3);border-radius:16px;padding:14px 20px;margin-bottom:24px;display:inline-block">
+      <p style="font-size:15px;font-weight:800;color:var(--brown3);margin-bottom:4px">💰 お金タイプ診断 × 証券会社おすすめ</p>
+      <p style="font-size:13px;color:var(--text2);line-height:1.7">2分の質問に答えるだけで「自分に合った投資スタイル」と<br>「おすすめの証券会社」がわかるWEB診断サービスです。</p>
+    </div>
     <div class="hero-badge">無料・2分・スマホで完結</div>
     <h1>毎月<span class="accent">1万円の積立</span>が、20年後に<span class="accent">127万円</span>の差を生む。</h1>
     <p class="hero-sub">「投資は怖い」「難しそう」——その感覚は正しい。<br>でも、月1万円・年4%・20年の積立で、銀行預金との差は<strong>約127万円</strong>になります。<br>まず自分のお金タイプを知ることから始めませんか。</p>
     <div class="hero-pill">※下のシミュレーターで自分の数字を試せます</div>
-    <br>
-    <p class="hero-note">登録不要・無料・2分で完了</p>
-    <div style="margin-top:14px">
-      <button onclick="openDiagModal()" class="btn-line" style="background:linear-gradient(135deg,var(--brown),var(--brown2));box-shadow:0 6px 24px rgba(107,79,46,.28);max-width:380px;border:none;cursor:pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        WEB診断する（2分）
-      </button>
-      <p class="hero-note" style="margin-top:8px">登録不要・すぐに結果が出ます</p>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:center;width:100%">
+      <button onclick="openDiagModal()" class="btn-brown" style="background:linear-gradient(135deg,var(--brown),var(--brown2));box-shadow:0 6px 24px rgba(107,79,46,.28);max-width:380px;border:none;cursor:pointer">WEB診断する（2分）</button>
+      <p class="hero-note">登録不要・無料・2分で完了</p>
     </div>
   </div>
 </section>
@@ -281,7 +211,7 @@ footer a{color:var(--text2);text-decoration:none}
       <div class="rc-card"><div class="rc-num">74万円</div><div class="rc-label">年3%のインフレが10年続くと、今日の100万円の実質購買力はここまで目減り。日本のCPIは2025年平均で前年比+3.2%（総務省統計局）。銀行に預けるだけでは静かに減り続けている</div></div>
       <div class="rc-card"><div class="rc-num">0.02%</div><div class="rc-label">メガバンク普通預金の金利（2025年時点）。年3%のインフレとの差は毎年約3%。10年で約26万円分の購買力が消える計算に（金融庁・各行公表金利より）</div></div>
       <div class="rc-card"><div class="rc-num">約1.9倍</div><div class="rc-label">月1万円・年利4%・30年で積立てると、元本360万円が約694万円に（複利シミュレーション）。銀行預金（0.02%）では364万円止まり。その差は約330万円</div></div>
-      <div class="rc-card"><div class="rc-num">53%</div><div class="rc-label">アメリカ人が株式・投資信託で保有する金融資産の割合。日本は約20%。この差が長期的な資産格差になっています</div></div>
+      <div class="rc-card"><div class="rc-num">20代</div><div class="rc-label">投資を始めるベストタイミング。複利の恩恵は時間が長いほど大きく、10年の差が数百万円の差になることも。「いつか始めよう」が最大のリスク</div></div>
     </div>
     <div class="rc-note">「投資しない」という選択は、リスクゼロではありません。インフレに負け続けることが、現代における最大のリスクかもしれません。<br><small style="font-size:11.5px;color:var(--beige-dark);display:block;margin-top:8px">※インフレ率：総務省統計局「消費者物価指数」2025年平均（前年比+3.2%）／普通預金金利：各メガバンク公表値（2025年時点）／複利計算：当サイトシミュレーター準拠</small></div>
   </div>
@@ -290,29 +220,26 @@ footer a{color:var(--text2);text-decoration:none}
 <section class="sim-bg">
   <div class="sec-inner">
     <span class="sec-label">SIMULATOR</span>
-    <h2 class="sec-title">自分の数字で確かめてみる</h2>
+    <h2 class="sec-title">自分の数字で試してみる</h2>
     <p class="sec-sub">月1万円・年4%・20年で試すと、銀行預金との差は<strong>約127万円</strong>。スライダーで自分の数字を確かめてください。</p>
     <div class="sim-box">
-      <div class="sim-row"><label>毎月の積立額</label><input type="range" id="monthly" min="1000" max="50000" step="1000" value="10000" oninput="calcSim()"><span class="val" id="monthly-val">10,000円</span></div>
-      <div class="sim-row"><label>運用期間</label><input type="range" id="years" min="5" max="40" step="5" value="20" oninput="calcSim()"><span class="val" id="years-val">20年</span></div>
-      <div class="sim-row"><label>想定利回り</label><input type="range" id="rate" min="1" max="8" step="0.5" value="4" oninput="calcSim()"><span class="val" id="rate-val">4%</span></div>
+      <div class="sim-row"><label>毎月の積立額</label><input type="range" id="monthly" min="3000" max="100000" step="1000" value="10000" oninput="calcSim()"><span class="val" id="monthly-val">10,000円</span></div>
+      <div class="sim-row"><label>積立期間</label><input type="range" id="years" min="1" max="40" step="1" value="20" oninput="calcSim()"><span class="val" id="years-val">20年</span></div>
+      <div class="sim-row"><label>想定年利</label><input type="range" id="rate" min="1" max="10" step="0.5" value="4" oninput="calcSim()"><span class="val" id="rate-val">4.0%</span></div>
       <div class="sim-result">
-        <div class="sim-result-row"><span class="label">積立元本</span><span class="value" id="r-principal">—</span></div>
-        <div class="sim-result-row"><span class="label">銀行預金（年利0.02%）</span><span class="value" id="r-bank">—</span></div>
-        <div class="sim-result-row highlight"><span class="label">📈 投資した場合</span><span class="value" id="r-invest">—</span></div>
-        <div class="sim-result-row"><span class="label">その差</span><span class="value" id="r-diff" style="color:var(--pop)">—</span></div>
+        <div class="sim-result-row"><span class="label">元本（積立合計）</span><span class="value" id="res-principal">—</span></div>
+        <div class="sim-result-row"><span class="label">銀行預金（年0.02%）</span><span class="value" id="res-bank">—</span></div>
+        <div class="sim-result-row highlight"><span class="label">投資した場合の試算</span><span class="value" id="res-invest">—</span></div>
+        <div class="sim-result-row"><span class="label">銀行預金との差額</span><span class="value" id="res-diff">—</span></div>
       </div>
       <div class="inflation-box" id="inflation-box"></div>
-
-      <!-- MODIFIED: シミュレーター結果の下に文脈連動CTA追加 -->
       <div class="sim-cta">
         <div>
           <p>この差を現実にするには、まず口座を開くことが先決。</p>
           <p><span>自分のタイプを診断すると、おすすめ証券会社も確認できます。</span></p>
         </div>
-        <button onclick="openDiagModal()" style="border:none;cursor:pointer" class="btn-brown">タイプ診断をはじめる →</button>
+        <button onclick="openDiagModal()" style="border:none;cursor:pointer" class="btn-brown" style="max-width:200px">タイプ診断をはじめる →</button>
       </div>
-
       <p class="sim-note">※将来のリターンを保証するものではありません。あくまでシミュレーションです。</p>
     </div>
   </div>
@@ -325,24 +252,23 @@ function calcSim(){
   var r=+document.getElementById('rate').value/100/12;
   var rb=0.0002/12;
   var n=y*12;
-  document.getElementById('monthly-val').textContent=m.toLocaleString('ja-JP')+'円';
-  document.getElementById('years-val').textContent=y+'年';
-  document.getElementById('rate-val').textContent=(+document.getElementById('rate').value)+'%';
   var principal=m*n;
   var bank=m*((Math.pow(1+rb,n)-1)/rb);
   var invest=m*((Math.pow(1+r,n)-1)/r);
   var diff=invest-bank;
-  document.getElementById('r-principal').textContent=fmt(principal);
-  document.getElementById('r-bank').textContent=fmt(bank);
-  document.getElementById('r-invest').textContent=fmt(invest);
-  document.getElementById('r-diff').textContent='+'+fmt(diff);
+  document.getElementById('monthly-val').textContent=m.toLocaleString('ja-JP')+'円';
+  document.getElementById('years-val').textContent=y+'年';
+  document.getElementById('rate-val').textContent=(+document.getElementById('rate').value).toFixed(1)+'%';
+  document.getElementById('res-principal').textContent=fmt(principal);
+  document.getElementById('res-bank').textContent=fmt(bank);
+  document.getElementById('res-invest').textContent=fmt(invest);
+  document.getElementById('res-diff').textContent='+'+fmt(diff);
   var realVal=principal*Math.pow(0.97,y);
   document.getElementById('inflation-box').innerHTML='📌 インフレ（年3%・2025年総務省統計局CPI実績ベース）が続いた場合、元本'+fmt(principal)+'の実質価値は'+y+'年後に<strong style="color:var(--brown)">'+fmt(realVal)+'相当</strong>に目減りします。';
 }
 calcSim();
 </script>
 
-<!-- 証券比較バナー -->
 <section style="background:var(--beige2);border-top:1px solid var(--beige3);border-bottom:1px solid var(--beige3);padding:36px 24px;text-align:center">
   <div class="sec-inner" style="max-width:560px">
     <p style="font-size:13.5px;color:var(--text2);margin-bottom:6px;font-weight:600;letter-spacing:.04em">📊 SBI・楽天・松井・マネックス・ウェルスナビを掲載</p>
@@ -352,29 +278,15 @@ calcSim();
   </div>
 </section>
 
-
-
 <section class="stories">
   <div class="sec-inner">
     <span class="sec-label">REAL VOICES</span>
     <h2 class="sec-title">始めた人たちのリアルな声</h2>
     <p class="sec-sub">「すごい人」の話じゃなく、「自分に近い人」の話が一番刺さる。</p>
     <div class="story-grid">
-      <div class="story-card">
-        <span class="story-icon">🧑‍🍼</span>
-        <p class="story-quote">「ママ友に『月3,000円から始められるよ』って言われて。正直半信半疑だったけど、とりあえずやってみた。1年経って、ちょっとだけ増えてた。それだけで十分だった。」</p>
-        <span class="story-tag">32歳・主婦</span>
-      </div>
-      <div class="story-card">
-        <span class="story-icon">🎓</span>
-        <p class="story-quote">「知識ゼロのまま、とりあえずNISAだけ開設した。何も勉強しないまま全世界株を毎月1万円に設定して、あとは放置。2年後に見たら増えてた。拍子抜けした。」</p>
-        <span class="story-tag">24歳・社会人2年目</span>
-      </div>
-      <div class="story-card">
-        <span class="story-icon">💻</span>
-        <p class="story-quote">「最初の3ヶ月はアプリを見るたびドキドキした。でも半年経ったら完全に慣れて、今は月1回しか見ない。投資って、始めてから慣れるものだと思う。」</p>
-        <span class="story-tag">28歳・会社員</span>
-      </div>
+      <div class="story-card"><span class="story-icon">😅</span><p class="story-quote">「3年間ずっと『来月から始めよう』と思ってた。診断したら自分のタイプがわかって、それだけで動けた」</p><span class="story-tag">26歳・会社員・堅実リス型</span></div>
+      <div class="story-card"><span class="story-icon">😌</span><p class="story-quote">「難しそうで避けてたけど、月3,000円から始めたら意外とストレスなかった。もっと早く始めればよかった」</p><span class="story-tag">29歳・看護師・ちょうちょ型</span></div>
+      <div class="story-card"><span class="story-icon">🙌</span><p class="story-quote">「投資信託って聞いてたけど、正直意味わかってなかった。自分のタイプを知ってから選んだら迷わなかった」</p><span class="story-tag">24歳・教員・コツコツ亀型</span></div>
     </div>
   </div>
 </section>
@@ -382,34 +294,23 @@ calcSim();
 <section class="timeline-bg">
   <div class="sec-inner">
     <span class="sec-label">EMOTIONAL JOURNEY</span>
-    <h2 class="sec-title">「どうせ最初は不安になる」——それ、あらかじめ知っておいてください。</h2>
-    <p class="sec-sub">投資を始めた人のリアルな感情の変化です。</p>
+    <h2 class="sec-title">「投資、怖い」から「始めてよかった」まで</h2>
+    <p class="sec-sub">投資を始めた人のほとんどが、同じ感情の道をたどっています。</p>
     <div class="tl-wrap">
-      <div class="tl-item"><div class="tl-dot">1<br>ヶ月</div><div class="tl-body"><h4>😰 「やっぱり怖い…」</h4><p>口座は開設した。でも積立設定したあと、アプリを開くたびにドキドキする。含み損が出た日には「失敗したかも」と思う。——これは全員が通る道です。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">3<br>ヶ月</div><div class="tl-body"><h4>😌 「ちょっと慣れてきた」</h4><p>数字が上下することに少しだけ慣れてきた。毎日見なくていいことがわかってきた。自動積立なので、特に何もしなくていいことに気づく。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">半年</div><div class="tl-body"><h4>😊 「あ、気にならなくなった」</h4><p>月1回アプリを開くくらいになった。積立は淡々と続いている。「投資してる自分」が普通になってくる。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">1年</div><div class="tl-body"><h4>🎉 「なんで早くやらなかったんだろう」</h4><p>元本より増えているのを見て、「もっと早く始めればよかった」と思う人がほとんどです。</p></div></div>
-    </div>
-
-    <!-- MODIFIED: tl-action 内のリンクを securities.html のアンカーへ -->
-    <div class="tl-action">
-      <h4>🎯 迷ったらこれだけ覚えてください</h4>
-      <p>
-        ① <strong><a href="securities.html#sbi">SBI証券</a>か<a href="securities.html#rakuten">楽天証券</a></strong>でNISA口座を開く<br>
-        ② <strong>全世界株式インデックスファンド</strong>を選ぶ<br>
-        ③ <strong>毎月自動積立に設定</strong>して、あとは放置するだけ<br><br>
-        これが、投資の「1つの正解」です。難しいことは何もありません。<br>
-        
-      </p>
+      <div class="tl-item"><div class="tl-dot">不安</div><div class="tl-body"><div class="tl-title">「元本割れするんじゃ…」</div><div class="tl-text">最初の壁はここ。全員が通る。でも積立投資は長期で持つほどリスクが下がる仕組みになっています。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">調査</div><div class="tl-body"><div class="tl-title">「どの証券会社がいいの？」</div><div class="tl-text">比較し始めると情報が多すぎて止まる。でも初心者なら<a href="securities.html#sbi">SBI証券</a>か<a href="securities.html#rakuten">楽天証券</a>で大きく外れません。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">開始</div><div class="tl-body"><div class="tl-title">「とりあえず月3,000円だけ設定」</div><div class="tl-text">最初の設定が終わった瞬間、不安より「やった」の感覚が来る人が多い。金額は後から変えられます。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">慣れ</div><div class="tl-body"><div class="tl-title">「あ、放っておいていいんだ」</div><div class="tl-text">積立投資は設定したら基本ほったらかし。毎月自動で積み上がっていく感覚に慣れてくる。</div></div></div>
+      <div class="tl-item"><div class="tl-dot">実感</div><div class="tl-body"><div class="tl-title">「始めてよかった」</div><div class="tl-text">半年〜1年後、残高が増えているのを見て実感が生まれる。「もっと早く始めれば」という声が一番多い。</div></div></div>
     </div>
   </div>
 </section>
 
 <section class="how-bg">
-  <div class="how-inner">
+  <div class="sec-inner">
     <span class="sec-label">HOW IT WORKS</span>
-    <h2>使い方はシンプルです</h2>
-    <p class="lead">3ステップ、2分で完了します</p>
+    <h2 class="sec-title">使い方はシンプルです</h2>
+    <p class="sec-sub">3ステップ、2分で完了します</p>
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-text"><h3>お金タイプを診断する</h3><p>このページ上で完結。名前やメールアドレスの入力は一切ありません。</p></div></div>
       <div class="step"><div class="step-num">2</div><div class="step-text"><h3>ボタンを選ぶだけで診断</h3><p>全部ボタン形式です。文章を書く必要はありません。6〜7問で完了します。</p></div></div>
@@ -423,11 +324,11 @@ calcSim();
     <span class="sec-label">FAQ</span>
     <h2 class="sec-title">よくある質問</h2>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">元本割れが怖いのですが、本当に大丈夫ですか？</div><div class="faq-a">その不安は正常です。ただ、「長期・積立・分散」という3つを守ることで、リスクは大幅に下がります。世界中の株に分散する「全世界株式インデックスファンド」を毎月自動積立すると、一時的に下がっても時間をかけて回復する可能性が歴史的に高いとされています。さらに、国が新NISA制度で利益を非課税にして後押ししていること自体、「長期投資は有効な手段」という国のメッセージでもあります。</div></div>
       <div class="faq-item"><div class="faq-q">本当に無料ですか？</div><div class="faq-a">はい、診断も利用もすべて無料です。登録は不要で、口座開設も無料です。</div></div>
-      <div class="faq-item"><div class="faq-q">投資の知識が全くないのですが大丈夫ですか？</div><div class="faq-a">むしろそのくらいの方が向いています。「何も知らないまま全世界株式を積立設定して放置」が、実は最もシンプルで有効な方法の一つです。タイプ診断の結果に合わせて「最初にやること」を具体的にお伝えします。</div></div>
-      <div class="faq-item"><div class="faq-q">診断したら口座を開設しないといけませんか？</div><div class="faq-a">いいえ。診断だけ、<a href="securities.html" style="color:var(--brown);font-weight:700;text-decoration:underline">比較ページを見る</a>だけ、でも全然OKです。</div></div>
-      <div class="faq-item"><div class="faq-q">最初いくら用意すればいいですか？</div><div class="faq-a">SBI証券や楽天証券なら月100円から積立できます。「まとまったお金が必要」というのはイメージと現実のギャップで、始めるだけなら今日の夕食代くらいで十分です。</div></div>
+      <div class="faq-item"><div class="faq-q">個人情報は必要ですか？</div><div class="faq-a">不要です。名前・メール・電話番号などの入力は一切ありません。</div></div>
+      <div class="faq-item"><div class="faq-q">投資の知識がなくても大丈夫？</div><div class="faq-a">はい。「何も知らない」前提で作っています。知識より先に「自分のタイプ」を知る方が大事です。</div></div>
+      <div class="faq-item"><div class="faq-q">診断結果は本当に合ってるの？</div><div class="faq-a">完璧ではありませんが、行動パターンと性格傾向から、向いているスタイルを導きます。参考として使ってください。</div></div>
+      <div class="faq-item"><div class="faq-q">口座開設って難しくないですか？</div><div class="faq-a">スマホで10〜20分あれば完了します。マイナンバーと本人確認書類があればOKです。</div></div>
     </div>
   </div>
 </section>
@@ -436,9 +337,7 @@ calcSim();
   <div class="sec-inner" style="max-width:560px">
     <h2>まず、自分のお金タイプを知ることから。</h2>
     <p>診断は無料・2分・登録不要。結果と同時におすすめの証券会社も確認できます。</p>
-    <button onclick="openDiagModal()" class="btn-brown" style="border:none;cursor:pointer;max-width:360px;margin:0 auto">
-      無料でお金タイプ診断をはじめる
-    </button>
+    <button onclick="openDiagModal()" class="btn-brown" style="border:none;cursor:pointer;max-width:360px;margin:0 auto">無料でお金タイプ診断をはじめる</button>
     <p style="margin-top:14px;font-size:12.5px;color:var(--text2)">登録不要・個人情報の入力なし</p>
   </div>
 </section>
@@ -455,63 +354,25 @@ calcSim();
       <div class="diag-progress-dot"></div>
       <div class="diag-progress-dot"></div>
     </div>
-
-    <!-- Q1: MBTI経験 -->
     <div class="diag-step active" id="diag-step-1">
-      <div class="diag-q">MBTI診断をやったことはありますか？<span class="diag-q-sub">あれば直接タイプを使います（なくてもOK）</span></div>
+      <div class="diag-q">MBTIを知っていますか？<span class="diag-q-sub">16タイプの性格診断です。結果を知っていれば診断の精度が上がります。</span></div>
       <div class="diag-choices">
-        <button class="diag-btn" onclick="diagQ1('yes')">ある</button>
-        <button class="diag-btn" onclick="diagQ1('no')">ない・覚えていない</button>
+        <button class="diag-btn" onclick="diagQ1('yes')">知っていて、自分のタイプもわかる</button>
+        <button class="diag-btn" onclick="diagQ1('no')">知らない・わからない</button>
       </div>
     </div>
-
-    <!-- Q1b: MBTIタイプ入力 -->
     <div class="diag-step" id="diag-step-1b">
       <div class="diag-q">あなたのMBTIタイプを入力してください<span class="diag-q-sub">大文字4文字で（例：INFJ）</span></div>
       <div class="mbti-list-wrap">
-        <div class="mbti-group">
-          <div class="mbti-group-title">分析家 💜</div>
-          <div class="mbti-grid">
-            <span class="mbti-item">🔮 <strong>INTJ</strong>：建築家</span>
-            <span class="mbti-item">💜 <strong>INTP</strong>：論理学者</span>
-            <span class="mbti-item">👑 <strong>ENTJ</strong>：指揮官</span>
-            <span class="mbti-item">⚡ <strong>ENTP</strong>：討論者</span>
-          </div>
-        </div>
-        <div class="mbti-group">
-          <div class="mbti-group-title">外交官 💚</div>
-          <div class="mbti-grid">
-            <span class="mbti-item">🌿 <strong>INFJ</strong>：提唱者</span>
-            <span class="mbti-item">🍀 <strong>INFP</strong>：仲介者</span>
-            <span class="mbti-item">🌟 <strong>ENFJ</strong>：主人公</span>
-            <span class="mbti-item">🌈 <strong>ENFP</strong>：広報運動家</span>
-          </div>
-        </div>
-        <div class="mbti-group">
-          <div class="mbti-group-title">番人 💙</div>
-          <div class="mbti-grid">
-            <span class="mbti-item">🔵 <strong>ISTJ</strong>：管理者</span>
-            <span class="mbti-item">🛡️ <strong>ISFJ</strong>：擁護者</span>
-            <span class="mbti-item">📋 <strong>ESTJ</strong>：幹部</span>
-            <span class="mbti-item">🤝 <strong>ESFJ</strong>：領事</span>
-          </div>
-        </div>
-        <div class="mbti-group">
-          <div class="mbti-group-title">探検家 💛</div>
-          <div class="mbti-grid">
-            <span class="mbti-item">🔧 <strong>ISTP</strong>：巨匠</span>
-            <span class="mbti-item">🎨 <strong>ISFP</strong>：冒険家</span>
-            <span class="mbti-item">🔥 <strong>ESTP</strong>：起業家</span>
-            <span class="mbti-item">🎉 <strong>ESFP</strong>：エンターテイナー</span>
-          </div>
-        </div>
+        <div class="mbti-group"><div class="mbti-group-title">分析家 💜</div><div class="mbti-grid"><span class="mbti-item">🔮 <strong>INTJ</strong>：建築家</span><span class="mbti-item">💜 <strong>INTP</strong>：論理学者</span><span class="mbti-item">👑 <strong>ENTJ</strong>：指揮官</span><span class="mbti-item">⚡ <strong>ENTP</strong>：討論者</span></div></div>
+        <div class="mbti-group"><div class="mbti-group-title">外交官 💚</div><div class="mbti-grid"><span class="mbti-item">🌿 <strong>INFJ</strong>：提唱者</span><span class="mbti-item">🍀 <strong>INFP</strong>：仲介者</span><span class="mbti-item">🌟 <strong>ENFJ</strong>：主人公</span><span class="mbti-item">🌈 <strong>ENFP</strong>：広報運動家</span></div></div>
+        <div class="mbti-group"><div class="mbti-group-title">番人 💙</div><div class="mbti-grid"><span class="mbti-item">🔵 <strong>ISTJ</strong>：管理者</span><span class="mbti-item">🛡️ <strong>ISFJ</strong>：擁護者</span><span class="mbti-item">📋 <strong>ESTJ</strong>：幹部</span><span class="mbti-item">🤝 <strong>ESFJ</strong>：領事</span></div></div>
+        <div class="mbti-group"><div class="mbti-group-title">探検家 💛</div><div class="mbti-grid"><span class="mbti-item">🔧 <strong>ISTP</strong>：巨匠</span><span class="mbti-item">🎨 <strong>ISFP</strong>：冒険家</span><span class="mbti-item">🔥 <strong>ESTP</strong>：起業家</span><span class="mbti-item">🎉 <strong>ESFP</strong>：エンターテイナー</span></div></div>
       </div>
       <input class="diag-mbti-input" id="mbtiInput" type="text" maxlength="4" placeholder="INFJ" autocomplete="off">
       <button class="diag-mbti-next" onclick="diagMbtiSubmit()">次へ →</button>
       <div class="diag-skip" onclick="diagQ1('no')">わからない・スキップ</div>
     </div>
-
-    <!-- Q1c: 補完質問 -->
     <div class="diag-step" id="diag-step-1c">
       <div class="diag-q">新しいことを始めるとき、どちらが近いですか？</div>
       <div class="diag-choices">
@@ -519,8 +380,6 @@ calcSim();
         <button class="diag-btn" onclick="diagFallback('B')">調べてから計画を立てる派</button>
       </div>
     </div>
-
-    <!-- Q2 -->
     <div class="diag-step" id="diag-step-2">
       <div class="diag-q">投資で一時的に10%損が出たら、どうしますか？</div>
       <div class="diag-choices">
@@ -530,8 +389,6 @@ calcSim();
         <button class="diag-btn" onclick="diagQ2('D')">買い増しのチャンスかも</button>
       </div>
     </div>
-
-    <!-- Q3 -->
     <div class="diag-step" id="diag-step-3">
       <div class="diag-q">投資って今どのフェーズですか？</div>
       <div class="diag-choices">
@@ -541,8 +398,6 @@ calcSim();
         <button class="diag-btn" onclick="diagQ3('D')">すでに積立など始めてる</button>
       </div>
     </div>
-
-    <!-- Q4 -->
     <div class="diag-step" id="diag-step-4">
       <div class="diag-q">投資したお金、将来どう使うイメージですか？</div>
       <div class="diag-choices">
@@ -551,8 +406,6 @@ calcSim();
         <button class="diag-btn" onclick="diagQ4('C')">当分引き出さず複利でずっと増やしたい</button>
       </div>
     </div>
-
-    <!-- Q5 -->
     <div class="diag-step" id="diag-step-5">
       <div class="diag-q">毎月、自由に動かせるお金はどのくらいありますか？</div>
       <div class="diag-choices">
@@ -561,8 +414,6 @@ calcSim();
         <button class="diag-btn" onclick="diagQ5('C')">3万円以上は動かせる</button>
       </div>
     </div>
-
-    <!-- Q6 -->
     <div class="diag-step" id="diag-step-6">
       <div class="diag-q">最後に一つだけ。奨学金はありますか？<span class="diag-q-sub">スキップしてもOKです</span></div>
       <div class="diag-choices">
@@ -571,518 +422,119 @@ calcSim();
         <button class="diag-btn" onclick="diagQ6(false)" style="color:var(--text2)">スキップする</button>
       </div>
     </div>
-
-    <!-- 結果 -->
     <div class="diag-result" id="diag-result">
-      <div id="diag-loan-note" class="diag-loan-note" style="display:none">
-        ＊奨学金がある中での一歩として：返済と投資は「どちらか」ではなく「両立できる」設計があります。まずは今日の一歩から始めましょう。
+      <div class="diag-result-inner">
+        <div id="diag-loan-note" class="diag-loan-note" style="display:none">＊奨学金がある中での一歩として：返済と投資は「どちらか」ではなく「両立できる」設計があります。まずは今日の一歩から始めましょう。</div>
+        <span class="diag-result-emoji" id="res-emoji"></span>
+        <div class="diag-result-name" id="res-type"></div>
+        <div class="diag-result-tagline" id="res-tagline"></div>
+        <div class="diag-result-strengths"><p>あなたの強み</p><ul id="res-strengths"></ul></div>
+        <div class="diag-result-caution" id="res-caution"></div>
+        <div class="diag-result-step" id="res-step"></div>
+        <a href="#" class="diag-result-cta" id="res-cta" target="_blank" rel="noopener noreferrer"></a>
+        <a href="#" class="diag-result-compare-btn" id="res-compare" target="_blank" rel="noopener noreferrer"></a>
+        <a href="securities.html" class="diag-result-all-compare">全証券会社を比較する →</a>
+        <div class="diag-restart" onclick="restartDiag()">もう一度診断する</div>
       </div>
-      <span class="diag-result-emoji" id="res-emoji"></span>
-      <div class="diag-result-type" id="res-type"></div>
-      <div class="diag-result-tagline" id="res-tagline"></div>
-      <div class="diag-result-strengths">
-        <h4>あなたの強み</h4>
-        <ul id="res-strengths"></ul>
-      </div>
-      <div class="diag-result-caution" id="res-caution"></div>
-      <div class="diag-result-step" id="res-step"></div>
-      <a href="#" class="diag-result-cta" id="res-cta" target="_blank" rel="noopener noreferrer"></a>
-      <a href="#" class="diag-result-compare-btn" id="res-compare" target="_blank" rel="noopener noreferrer"></a>
-      <a href="securities.html" class="diag-result-all-compare" target="_blank" rel="noopener noreferrer">全証券会社を比較する →</a>
-      <div class="diag-restart" onclick="restartDiag()">もう一度診断する</div>
     </div>
   </div>
 </div>
 
-
 <script>
-// ===== 診断モーダル =====
-var diagState = {};
-
-var DIAG_TYPES = {
-  butterfly: {
-    emoji:'🦋', name:'跳躍前のちょうちょ', tagline:'準備は整ってる。あとは最初の一歩だけ',
-    strengths:['理由を理解してから動く誠実さ','一度始めたら長く続けられる継続力','感情より論理で判断できる冷静さ'],
-    caution:'⚠ 考えすぎて「始めない」が一番のリスクになっています。',
-    step:'→ <strong>SBI証券</strong>で月100円から積立スタート。「口座を持つ」という事実が次の行動を変えます。',
-    ctaLabel:'【SBI証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/sbi',
-    compareLabel:'SBI証券の詳細を比較ページで見る', compareUrl:'securities.html#sbi'
-  },
-  rocket: {
-    emoji:'🚀', name:'行動ロケット', tagline:'直感で動ける。仕組みさえ作れば最強',
-    strengths:['チャンスを直感で掴める行動力','変化に強く情報収集が速い','人より早くスタートラインに立てる'],
-    caution:'⚠ 熱量のまま動くと管理が追いつかなくなることがあります。続ける仕組みを意識して。',
-    step:'→ <strong>松井証券</strong>のNISA成長投資枠で本格スタート。手数料ゼロ・分析ツール充実。',
-    ctaLabel:'【松井証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/matsui',
-    compareLabel:'松井証券の詳細を比較ページで見る', compareUrl:'securities.html#matsui'
-  },
-  eagle: {
-    emoji:'🦅', name:'飛躍のワシ', tagline:'大局を見て、ここぞで動ける戦略家',
-    strengths:['大局を見て判断できる俯瞰力','損失をデータで受け止められるメンタル','長期的なビジョンで動ける戦略眼'],
-    caution:'⚠ 自信があるぶん「分散」を軽視しやすい。ワシは翼を広げてこそ強いです。',
-    step:'→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。豊富な分析ツールが力になります。',
-    ctaLabel:'【松井証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/matsui',
-    compareLabel:'松井証券の詳細を比較ページで見る', compareUrl:'securities.html#matsui'
-  },
-  dolphin: {
-    emoji:'🐬', name:'慎重イルカ', tagline:'好奇心はある。「続く仕組み」が鍵',
-    strengths:['トレンドをいち早くキャッチできる','柔軟に方向転換できる','人との共感力が高い'],
-    caution:'⚠ 感情に連動して売買するとじわじわ損をしていきます。「考えなくていい仕組み」が大事。',
-    step:'→ <strong>ウェルスナビ</strong>で入金するだけのAI自動運用がおすすめ。',
-    ctaLabel:'【ウェルスナビ】自動運用をはじめる（無料）', ctaUrl:'https://dummy-url.com/wealthnavi',
-    compareLabel:'ウェルスナビの詳細を比較ページで見る', compareUrl:'securities.html#wealth'
-  },
-  squirrel: {
-    emoji:'🐿️', name:'堅実リス', tagline:'コツコツ派の最大の武器は「継続力」',
-    strengths:['無駄遣いをしない自制心','安全かどうかを先に確認する慎重さ','長く続けられる安定感'],
-    caution:'⚠ 貯金だけでは物価上昇にじわじわ負けていきます。「リスクを取らないこと」にもリスクがあります。',
-    step:'→ <strong>楽天証券</strong>で全世界株式を月3,000円だけ積立。楽天ポイントも貯まります。',
-    ctaLabel:'【楽天証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/rakuten',
-    compareLabel:'楽天証券の詳細を比較ページで見る', compareUrl:'securities.html#rakuten'
-  },
-  turtle: {
-    emoji:'🐢', name:'コツコツ貯め亀', tagline:'確実に前へ。積立投資との相性は最高',
-    strengths:['計画を立てて着実に実行できる','目先の変動に動じない安定したメンタル','「続けること」を苦にしない持続力'],
-    caution:'⚠ 比較しすぎて始められないことがあります。時間という最大の資産が減っていきます。',
-    step:'→ <strong>SBI証券</strong>でS&P500インデックスファンドを月5,000円から。これだけで十分です。',
-    ctaLabel:'【SBI証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/sbi',
-    compareLabel:'SBI証券の詳細を比較ページで見る', compareUrl:'securities.html#sbi'
-  },
-  hedgehog: {
-    emoji:'🦔', name:'守りのハリネズミ', tagline:'慎重さが最大の盾。「守る」と「増やす」は両立する',
-    strengths:['危ない選択を直感で避けられる嗅覚','長期的な安心を優先できる自制心','「守る」ことへの強いコミットメント'],
-    caution:'⚠ 針を立てたまま動かないでいるとチャンスも近づけなくなります。',
-    step:'→ <strong>楽天証券</strong>のバランス型ファンドで株・債券・不動産を自動分散。全部任せるから始めるのが◎',
-    ctaLabel:'【楽天証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/rakuten',
-    compareLabel:'楽天証券の詳細を比較ページで見る', compareUrl:'securities.html#rakuten'
-  },
-  hunter: {
-    emoji:'🏹', name:'戦略ハンター', tagline:'データと論理で動ける。本格投資向きの希少タイプ',
-    strengths:['データと論理でリスクを管理できる','感情ではなくルールで売買できる自律性','目標から逆算して行動を決める戦略性'],
-    caution:'⚠ 計画への自信が強いぶん想定外への対応が遅れることがあります。「余白」を残しておきましょう。',
-    step:'→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。分析ツールが豊富で戦略ハンタータイプと相性◎',
-    ctaLabel:'【松井証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/matsui',
-    compareLabel:'松井証券の詳細を比較ページで見る', compareUrl:'securities.html#matsui'
-  }
+var diagState={};
+var TYPES={
+  butterfly:{emoji:'🦋',name:'跳躍前のちょうちょ',tagline:'準備は整ってる。あとは最初の一歩だけ',strengths:['理由を理解してから動く誠実さ','一度始めたら長く続けられる継続力','感情より論理で判断できる冷静さ'],caution:'⚠ 考えすぎて「始めない」が一番のリスクになっています。',step:'→ <strong>SBI証券</strong>で月100円から積立スタート。「口座を持つ」という事実が次の行動を変えます。',ctaLabel:'【SBI証券】口座開設する（無料）',ctaUrl:'https://dummy-url.com/sbi',compareLabel:'SBI証券の詳細を比較ページで見る',compareUrl:'securities.html#sbi'},
+  rocket:{emoji:'🚀',name:'行動ロケット',tagline:'直感で動ける。仕組みさえ作れば最強',strengths:['チャンスを直感で掴める行動力','変化に強く情報収集が速い','人より早くスタートラインに立てる'],caution:'⚠ 熱量のまま動くと管理が追いつかなくなることがあります。続ける仕組みを意識して。',step:'→ <strong>松井証券</strong>のNISA成長投資枠で本格スタート。手数料ゼロ・分析ツール充実。',ctaLabel:'【松井証券】口座開設する（無料）',ctaUrl:'https://dummy-url.com/matsui',compareLabel:'松井証券の詳細を比較ページで見る',compareUrl:'securities.html#matsui'},
+  eagle:{emoji:'🦅',name:'飛躍のワシ',tagline:'大局を見て、ここぞで動ける戦略家',strengths:['大局を見て判断できる俯瞰力','損失をデータで受け止められるメンタル','長期的なビジョンで動ける戦略眼'],caution:'⚠ 自信があるぶん「分散」を軽視しやすい。ワシは翼を広げてこそ強いです。',step:'→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。豊富な分析ツールが力になります。',ctaLabel:'【松井証券】口座開設する（無料）',ctaUrl:'https://dummy-url.com/matsui',compareLabel:'松井証券の詳細を比較ページで見る',compareUrl:'securities.html#matsui'},
+  dolphin:{emoji:'🐬',name:'慎重イルカ',tagline:'好奇心はある。「続く仕組み」が鍵',strengths:['トレンドをいち早くキャッチできる','柔軟に方向転換できる','人との共感力が高い'],caution:'⚠ 感情に連動して売買するとじわじわ損をしていきます。「考えなくていい仕組み」が大事。',step:'→ <strong>ウェルスナビ</strong>で入金するだけのAI自動運用がおすすめ。',ctaLabel:'【ウェルスナビ】自動運用をはじめる（無料）',ctaUrl:'https://dummy-url.com/wealthnavi',compareLabel:'ウェルスナビの詳細を比較ページで見る',compareUrl:'securities.html#wealth'},
+  squirrel:{emoji:'🐿️',name:'堅実リス',tagline:'コツコツ派の最大の武器は「継続力」',strengths:['無駄遣いをしない自制心','安全かどうかを先に確認する慎重さ','長く続けられる安定感'],caution:'⚠ 貯金だけでは物価上昇にじわじわ負けていきます。「リスクを取らないこと」にもリスクがあります。',step:'→ <strong>楽天証券</strong>で全世界株式を月3,000円だけ積立。楽天ポイントも貯まります。',ctaLabel:'【楽天証券】口座開設する（無料）',ctaUrl:'https://dummy-url.com/rakuten',compareLabel:'楽天証券の詳細を比較ページで見る',compareUrl:'securities.html#rakuten'},
+  turtle:{emoji:'🐢',name:'コツコツ貯め亀',tagline:'確実に前へ。積立投資との相性は最高',strengths:['計画を立てて着実に実行できる','目先の変動に動じない安定したメンタル','「続けること」を苦にしない持続力'],caution:'⚠ 比較しすぎて始められないことがあります。時間という最大の資産が減っていきます。',step:'→ <strong>SBI証券</strong>でS&P500インデックスファンドを月5,000円から。これだけで十分です。',ctaLabel:'【SBI証券】口座開設する（無料）',ctaUrl:'https://dummy-url.com/sbi',compareLabel:'SBI証券の詳細を比較ページで見る',compareUrl:'securities.html#sbi'},
+  hedgehog:{emoji:'🦔',name:'守りのハリネズミ',tagline:'慎重さが最大の盾。「守る」と「増やす」は両立する',strengths:['危ない選択を直感で避けられる嗅覚','長期的な安心を優先できる自制心','「守る」ことへの強いコミットメント'],caution:'⚠ 針を立てたまま動かないでいるとチャンスも近づけなくなります。',step:'→ <strong>楽天証券</strong>のバランス型ファンドで株・債券・不動産を自動分散。全部任せるから始めるのが◎',ctaLabel:'【楽天証券】口座開設する（無料）',ctaUrl:'https://dummy-url.com/rakuten',compareLabel:'楽天証券の詳細を比較ページで見る',compareUrl:'securities.html#rakuten'},
+  hunter:{emoji:'🏹',name:'戦略ハンター',tagline:'データと論理で動ける。本格投資向きの希少タイプ',strengths:['データと論理でリスクを管理できる','感情ではなくルールで売買できる自律性','目標から逆算して行動を決める戦略性'],caution:'⚠ 計画への自信が強いぶん想定外への対応が遅れることがあります。「余白」を残しておきましょう。',step:'→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。分析ツールが豊富で戦略ハンタータイプと相性◎',ctaLabel:'【松井証券】口座開設する（無料）',ctaUrl:'https://dummy-url.com/matsui',compareLabel:'松井証券の詳細を比較ページで見る',compareUrl:'securities.html#matsui'}
 };
 
-function openDiagModal(){
-  restartDiag();
-  document.getElementById('diagOverlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeDiagModal(){
-  document.getElementById('diagOverlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('diagOverlay').addEventListener('click',function(e){
-  if(e.target===this) closeDiagModal();
-});
+function openDiagModal(){document.getElementById('diagOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeDiagModal(){document.getElementById('diagOverlay').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('diagOverlay').addEventListener('click',function(e){if(e.target===this)closeDiagModal();});
 
 function showStep(id){
-  document.querySelectorAll('.diag-step').forEach(function(el){el.classList.remove('active')});
-  document.getElementById('diag-result').classList.remove('active');
-  var el=document.getElementById(id);
-  if(el) el.classList.add('active');
-}
-function updateProgress(n){
+  document.querySelectorAll('.diag-step,.diag-result').forEach(function(s){s.classList.remove('active')});
+  document.getElementById(id).classList.add('active');
+  var steps=['diag-step-1','diag-step-2','diag-step-3','diag-step-4','diag-step-5','diag-step-6','diag-result'];
   var dots=document.querySelectorAll('.diag-progress-dot');
-  dots.forEach(function(d,i){
-    d.classList.remove('active','done');
-    if(i<n-1) d.classList.add('done');
-    else if(i===n-1) d.classList.add('active');
-  });
+  var idx=steps.indexOf(id);
+  dots.forEach(function(d,i){d.classList.toggle('active',i<=idx)});
 }
 
-function diagQ1(v){
-  if(v==='yes'){showStep('diag-step-1b');updateProgress(1);}
-  else{showStep('diag-step-1c');updateProgress(1);}
-}
+function diagQ1(ans){if(ans==='yes')showStep('diag-step-1b');else showStep('diag-step-1c');}
 function diagMbtiSubmit(){
   var val=document.getElementById('mbtiInput').value.trim().toUpperCase();
-  if(val.length<2){showStep('diag-step-1c');return;}
-  diagState.intuitive=val.indexOf('N')>=0;
-  diagState.judging=val.indexOf('J')>=0;
-  showStep('diag-step-2');updateProgress(2);
+  var valid=['INTJ','INTP','ENTJ','ENTP','INFJ','INFP','ENFJ','ENFP','ISTJ','ISFJ','ESTJ','ESFJ','ISTP','ISFP','ESTP','ESFP'];
+  if(valid.indexOf(val)===-1){alert('正しいMBTIタイプを入力してください（例：INFJ）');return;}
+  diagState.mbti=val;showStep('diag-step-2');
 }
-function diagFallback(v){
-  diagState.intuitive=(v==='A');
-  diagState.judging=(v==='B');
-  showStep('diag-step-2');updateProgress(2);
-}
-function diagQ2(v){diagState.q2=v;showStep('diag-step-3');updateProgress(3);}
-function diagQ3(v){diagState.q3=v;showStep('diag-step-4');updateProgress(4);}
-function diagQ4(v){diagState.q4=v;showStep('diag-step-5');updateProgress(5);}
-function diagQ5(v){diagState.q5=v;showStep('diag-step-6');updateProgress(6);}
+function diagFallback(ans){diagState.fallback=ans;showStep('diag-step-2');}
+function diagQ2(ans){diagState.risk=ans;showStep('diag-step-3');}
+function diagQ3(ans){diagState.phase=ans;showStep('diag-step-4');}
+function diagQ4(ans){diagState.goal=ans;showStep('diag-step-5');}
+function diagQ5(ans){diagState.money=ans;showStep('diag-step-6');}
 function diagQ6(hasLoan){
-  diagState.hasLoan=hasLoan;
-  var R=calcRisk(diagState.q2||'B',diagState.q3||'B',diagState.q4||'B');
-  var surplus=calcSurplus(diagState.q5||'A');
-  var typeId=determineType(!!diagState.intuitive,!!diagState.judging,R,surplus);
-  showResult(typeId,hasLoan);
+  diagState.loan=hasLoan;
+  if(hasLoan)document.getElementById('diag-loan-note').style.display='block';
+  showResult(calcType());
 }
 
-function calcRisk(q2,q3,q4){
-  var R=0;
-  R+={A:0,B:1,C:2,D:3}[q2]||0;
-  R+={A:0,B:1,C:1,D:2}[q3]||0;
-  if(q4==='A') R=Math.max(0,R-2);
-  else if(q4==='B') R=Math.max(0,R-1);
-  return R;
-}
-function calcSurplus(q5){return{A:'low',B:'mid',C:'high'}[q5]||'low';}
-function determineType(intuitive,judging,R,surplus){
-  if(intuitive&&judging){
-    if(R<=2) return 'butterfly';
-    if(R<=4) return 'rocket';
-    return 'eagle';
-  } else if(intuitive&&!judging){
-    return R<=3?'dolphin':'rocket';
-  } else if(!intuitive&&judging){
-    if(R<=2) return 'squirrel';
-    if(R<=4) return 'turtle';
-    return 'hunter';
-  } else {
-    if(R<=2) return 'hedgehog';
-    return surplus==='high'?'turtle':'squirrel';
+function calcType(){
+  var mbti=diagState.mbti||'';
+  if(mbti){
+    if(mbti==='INTJ'||mbti==='ENTJ')return 'hunter';
+    if(mbti==='INTP'||mbti==='ENTP')return 'eagle';
+    if(mbti==='INFJ'||mbti==='INFP')return 'butterfly';
+    if(mbti==='ENFJ'||mbti==='ENFP')return 'rocket';
+    if(mbti==='ISTJ'||mbti==='ISFJ')return 'turtle';
+    if(mbti==='ESTJ'||mbti==='ESFJ')return 'squirrel';
+    if(mbti==='ISTP'||mbti==='ISFP')return 'hedgehog';
+    if(mbti==='ESTP'||mbti==='ESFP')return 'dolphin';
   }
+  var risk=diagState.risk,goal=diagState.goal,money=diagState.money,fb=diagState.fallback||'B';
+  if(risk==='D')return fb==='A'?'rocket':'hunter';
+  if(risk==='C'&&goal==='C')return 'eagle';
+  if(risk==='C'&&goal==='B')return 'turtle';
+  if(risk==='C'&&goal==='A')return 'dolphin';
+  if(risk==='B'&&goal==='C')return 'turtle';
+  if(risk==='B'&&goal==='B')return fb==='A'?'dolphin':'butterfly';
+  if(risk==='B'&&goal==='A')return 'squirrel';
+  if(risk==='A'&&money==='C')return 'hedgehog';
+  if(risk==='A'&&money==='B')return 'squirrel';
+  return 'butterfly';
 }
 
-function showResult(typeId,hasLoan){
-  var t=DIAG_TYPES[typeId];
-  document.getElementById('diag-result').classList.add('active');
-  document.querySelectorAll('.diag-step').forEach(function(el){el.classList.remove('active')});
-  document.querySelectorAll('.diag-progress-dot').forEach(function(d){d.classList.add('done');d.classList.remove('active')});
+function showResult(typeKey){
+  var t=TYPES[typeKey];
   document.getElementById('res-emoji').textContent=t.emoji;
-  document.getElementById('res-type').textContent=t.emoji+' '+t.name;
+  document.getElementById('res-type').textContent=t.name;
   document.getElementById('res-tagline').textContent=t.tagline;
   var ul=document.getElementById('res-strengths');
   ul.innerHTML='';
   t.strengths.forEach(function(s){var li=document.createElement('li');li.textContent=s;ul.appendChild(li);});
   document.getElementById('res-caution').textContent=t.caution;
   document.getElementById('res-step').innerHTML=t.step;
-  var cta=document.getElementById('res-cta');
-  cta.textContent=t.ctaLabel;
-  cta.href=t.ctaUrl;
-  var compare=document.getElementById('res-compare');
-  compare.textContent=t.compareLabel;
-  compare.href=t.compareUrl;
-  var loanNote=document.getElementById('diag-loan-note');
-  loanNote.style.display=hasLoan?'block':'none';
-  document.querySelector('.diag-modal').scrollTop=0;
+  document.getElementById('res-cta').textContent=t.ctaLabel;
+  document.getElementById('res-cta').href=t.ctaUrl;
+  document.getElementById('res-compare').textContent=t.compareLabel;
+  document.getElementById('res-compare').href=t.compareUrl;
+  showStep('diag-result');
 }
 
 function restartDiag(){
   diagState={};
   document.getElementById('mbtiInput').value='';
+  document.getElementById('diag-loan-note').style.display='none';
   showStep('diag-step-1');
-  updateProgress(1);
-  document.getElementById('diag-result').classList.remove('active');
 }
 </script>
 
 <footer>© 2026 ハンドリ　｜　<a href="securities.html">証券会社比較ページ</a>　｜　<a href="privacy.html">プライバシーポリシー</a></footer>
-
-
-<!-- ===== 診断モーダル ===== -->
-<div class="diag-modal-overlay" id="diagOverlay">
-  <div class="diag-modal" role="dialog" aria-modal="true" aria-label="お金タイプ診断">
-    <button class="diag-modal-close" onclick="closeDiagModal()" aria-label="閉じる">×</button>
-    <div class="diag-progress" id="diagProgress">
-      <div class="diag-progress-dot active"></div>
-      <div class="diag-progress-dot"></div>
-      <div class="diag-progress-dot"></div>
-      <div class="diag-progress-dot"></div>
-      <div class="diag-progress-dot"></div>
-      <div class="diag-progress-dot"></div>
-    </div>
-
-    <!-- Q1: MBTI経験 -->
-    <div class="diag-step active" id="diag-step-1">
-      <div class="diag-q">MBTI診断をやったことはありますか？<span class="diag-q-sub">あれば直接タイプを使います（なくてもOK）</span></div>
-      <div class="diag-choices">
-        <button class="diag-btn" onclick="diagQ1('yes')">ある</button>
-        <button class="diag-btn" onclick="diagQ1('no')">ない・覚えていない</button>
-      </div>
-    </div>
-
-    <!-- Q1b: MBTIタイプ入力 -->
-    <div class="diag-step" id="diag-step-1b">
-      <div class="diag-q">あなたのMBTIタイプを入力してください<span class="diag-q-sub">大文字4文字で（例：INFJ）</span></div>
-      <input class="diag-mbti-input" id="mbtiInput" type="text" maxlength="4" placeholder="INFJ" autocomplete="off">
-      <button class="diag-mbti-next" onclick="diagMbtiSubmit()">次へ →</button>
-      <div class="diag-skip" onclick="diagQ1('no')">わからない・スキップ</div>
-    </div>
-
-    <!-- Q1c: 補完質問 -->
-    <div class="diag-step" id="diag-step-1c">
-      <div class="diag-q">新しいことを始めるとき、どちらが近いですか？</div>
-      <div class="diag-choices">
-        <button class="diag-btn" onclick="diagFallback('A')">まずやってみる派</button>
-        <button class="diag-btn" onclick="diagFallback('B')">調べてから計画を立てる派</button>
-      </div>
-    </div>
-
-    <!-- Q2 -->
-    <div class="diag-step" id="diag-step-2">
-      <div class="diag-q">投資で一時的に10%損が出たら、どうしますか？</div>
-      <div class="diag-choices">
-        <button class="diag-btn" onclick="diagQ2('A')">すぐ売る・耐えられない</button>
-        <button class="diag-btn" onclick="diagQ2('B')">不安だけど様子を見る</button>
-        <button class="diag-btn" onclick="diagQ2('C')">長期ならまあいいかと思える</button>
-        <button class="diag-btn" onclick="diagQ2('D')">買い増しのチャンスかも</button>
-      </div>
-    </div>
-
-    <!-- Q3 -->
-    <div class="diag-step" id="diag-step-3">
-      <div class="diag-q">投資って今どのフェーズですか？</div>
-      <div class="diag-choices">
-        <button class="diag-btn" onclick="diagQ3('A')">怖くてまだ考えられない</button>
-        <button class="diag-btn" onclick="diagQ3('B')">興味あるけど何もしていない</button>
-        <button class="diag-btn" onclick="diagQ3('C')">調べたり口座は作った</button>
-        <button class="diag-btn" onclick="diagQ3('D')">すでに積立など始めてる</button>
-      </div>
-    </div>
-
-    <!-- Q4 -->
-    <div class="diag-step" id="diag-step-4">
-      <div class="diag-q">投資したお金、将来どう使うイメージですか？</div>
-      <div class="diag-choices">
-        <button class="diag-btn" onclick="diagQ4('A')">数年以内に引き出して使いたい</button>
-        <button class="diag-btn" onclick="diagQ4('B')">増えたら一部ずつ使っていきたい</button>
-        <button class="diag-btn" onclick="diagQ4('C')">当分引き出さず複利でずっと増やしたい</button>
-      </div>
-    </div>
-
-    <!-- Q5 -->
-    <div class="diag-step" id="diag-step-5">
-      <div class="diag-q">毎月、自由に動かせるお金はどのくらいありますか？</div>
-      <div class="diag-choices">
-        <button class="diag-btn" onclick="diagQ5('A')">ほぼない・ギリギリ</button>
-        <button class="diag-btn" onclick="diagQ5('B')">1万円くらいなら</button>
-        <button class="diag-btn" onclick="diagQ5('C')">3万円以上は動かせる</button>
-      </div>
-    </div>
-
-    <!-- Q6 -->
-    <div class="diag-step" id="diag-step-6">
-      <div class="diag-q">最後に一つだけ。奨学金はありますか？<span class="diag-q-sub">スキップしてもOKです</span></div>
-      <div class="diag-choices">
-        <button class="diag-btn" onclick="diagQ6(true)">ある</button>
-        <button class="diag-btn" onclick="diagQ6(false)">ない</button>
-        <button class="diag-btn" onclick="diagQ6(false)" style="color:var(--text2)">スキップする</button>
-      </div>
-    </div>
-
-    <!-- 結果 -->
-    <div class="diag-result" id="diag-result">
-      <div id="diag-loan-note" class="diag-loan-note" style="display:none">
-        ＊奨学金がある中での一歩として：返済と投資は「どちらか」ではなく「両立できる」設計があります。まずは今日の一歩から始めましょう。
-      </div>
-      <span class="diag-result-emoji" id="res-emoji"></span>
-      <div class="diag-result-type" id="res-type"></div>
-      <div class="diag-result-tagline" id="res-tagline"></div>
-      <div class="diag-result-strengths">
-        <h4>あなたの強み</h4>
-        <ul id="res-strengths"></ul>
-      </div>
-      <div class="diag-result-caution" id="res-caution"></div>
-      <div class="diag-result-step" id="res-step"></div>
-      <a href="#" class="diag-result-cta" id="res-cta" target="_blank" rel="noopener noreferrer"></a>
-      <a href="#" class="diag-result-compare-btn" id="res-compare" target="_blank" rel="noopener noreferrer"></a>
-      <a href="securities.html" class="diag-result-all-compare" target="_blank" rel="noopener noreferrer">全証券会社を比較する →</a>
-      <div class="diag-restart" onclick="restartDiag()">もう一度診断する</div>
-    </div>
-  </div>
-</div>
-
-
-<script>
-// ===== 診断モーダル =====
-var diagState = {};
-
-var DIAG_TYPES = {
-  butterfly: {
-    emoji:'🦋', name:'跳躍前のちょうちょ', tagline:'準備は整ってる。あとは最初の一歩だけ',
-    strengths:['理由を理解してから動く誠実さ','一度始めたら長く続けられる継続力','感情より論理で判断できる冷静さ'],
-    caution:'⚠ 考えすぎて「始めない」が一番のリスクになっています。',
-    step:'→ <strong>SBI証券</strong>で月100円から積立スタート。「口座を持つ」という事実が次の行動を変えます。',
-    ctaLabel:'【SBI証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/sbi',
-    compareLabel:'SBI証券の詳細を比較ページで見る', compareUrl:'securities.html#sbi'
-  },
-  rocket: {
-    emoji:'🚀', name:'行動ロケット', tagline:'直感で動ける。仕組みさえ作れば最強',
-    strengths:['チャンスを直感で掴める行動力','変化に強く情報収集が速い','人より早くスタートラインに立てる'],
-    caution:'⚠ 熱量のまま動くと管理が追いつかなくなることがあります。続ける仕組みを意識して。',
-    step:'→ <strong>松井証券</strong>のNISA成長投資枠で本格スタート。手数料ゼロ・分析ツール充実。',
-    ctaLabel:'【松井証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/matsui',
-    compareLabel:'松井証券の詳細を比較ページで見る', compareUrl:'securities.html#matsui'
-  },
-  eagle: {
-    emoji:'🦅', name:'飛躍のワシ', tagline:'大局を見て、ここぞで動ける戦略家',
-    strengths:['大局を見て判断できる俯瞰力','損失をデータで受け止められるメンタル','長期的なビジョンで動ける戦略眼'],
-    caution:'⚠ 自信があるぶん「分散」を軽視しやすい。ワシは翼を広げてこそ強いです。',
-    step:'→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。豊富な分析ツールが力になります。',
-    ctaLabel:'【松井証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/matsui',
-    compareLabel:'松井証券の詳細を比較ページで見る', compareUrl:'securities.html#matsui'
-  },
-  dolphin: {
-    emoji:'🐬', name:'慎重イルカ', tagline:'好奇心はある。「続く仕組み」が鍵',
-    strengths:['トレンドをいち早くキャッチできる','柔軟に方向転換できる','人との共感力が高い'],
-    caution:'⚠ 感情に連動して売買するとじわじわ損をしていきます。「考えなくていい仕組み」が大事。',
-    step:'→ <strong>ウェルスナビ</strong>で入金するだけのAI自動運用がおすすめ。',
-    ctaLabel:'【ウェルスナビ】自動運用をはじめる（無料）', ctaUrl:'https://dummy-url.com/wealthnavi',
-    compareLabel:'ウェルスナビの詳細を比較ページで見る', compareUrl:'securities.html#wealth'
-  },
-  squirrel: {
-    emoji:'🐿️', name:'堅実リス', tagline:'コツコツ派の最大の武器は「継続力」',
-    strengths:['無駄遣いをしない自制心','安全かどうかを先に確認する慎重さ','長く続けられる安定感'],
-    caution:'⚠ 貯金だけでは物価上昇にじわじわ負けていきます。「リスクを取らないこと」にもリスクがあります。',
-    step:'→ <strong>楽天証券</strong>で全世界株式を月3,000円だけ積立。楽天ポイントも貯まります。',
-    ctaLabel:'【楽天証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/rakuten',
-    compareLabel:'楽天証券の詳細を比較ページで見る', compareUrl:'securities.html#rakuten'
-  },
-  turtle: {
-    emoji:'🐢', name:'コツコツ貯め亀', tagline:'確実に前へ。積立投資との相性は最高',
-    strengths:['計画を立てて着実に実行できる','目先の変動に動じない安定したメンタル','「続けること」を苦にしない持続力'],
-    caution:'⚠ 比較しすぎて始められないことがあります。時間という最大の資産が減っていきます。',
-    step:'→ <strong>SBI証券</strong>でS&P500インデックスファンドを月5,000円から。これだけで十分です。',
-    ctaLabel:'【SBI証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/sbi',
-    compareLabel:'SBI証券の詳細を比較ページで見る', compareUrl:'securities.html#sbi'
-  },
-  hedgehog: {
-    emoji:'🦔', name:'守りのハリネズミ', tagline:'慎重さが最大の盾。「守る」と「増やす」は両立する',
-    strengths:['危ない選択を直感で避けられる嗅覚','長期的な安心を優先できる自制心','「守る」ことへの強いコミットメント'],
-    caution:'⚠ 針を立てたまま動かないでいるとチャンスも近づけなくなります。',
-    step:'→ <strong>楽天証券</strong>のバランス型ファンドで株・債券・不動産を自動分散。全部任せるから始めるのが◎',
-    ctaLabel:'【楽天証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/rakuten',
-    compareLabel:'楽天証券の詳細を比較ページで見る', compareUrl:'securities.html#rakuten'
-  },
-  hunter: {
-    emoji:'🏹', name:'戦略ハンター', tagline:'データと論理で動ける。本格投資向きの希少タイプ',
-    strengths:['データと論理でリスクを管理できる','感情ではなくルールで売買できる自律性','目標から逆算して行動を決める戦略性'],
-    caution:'⚠ 計画への自信が強いぶん想定外への対応が遅れることがあります。「余白」を残しておきましょう。',
-    step:'→ <strong>松井証券</strong>で個別株・ETFに本格挑戦。分析ツールが豊富で戦略ハンタータイプと相性◎',
-    ctaLabel:'【松井証券】口座開設する（無料）', ctaUrl:'https://dummy-url.com/matsui',
-    compareLabel:'松井証券の詳細を比較ページで見る', compareUrl:'securities.html#matsui'
-  }
-};
-
-function openDiagModal(){
-  restartDiag();
-  document.getElementById('diagOverlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeDiagModal(){
-  document.getElementById('diagOverlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('diagOverlay').addEventListener('click',function(e){
-  if(e.target===this) closeDiagModal();
-});
-
-function showStep(id){
-  document.querySelectorAll('.diag-step').forEach(function(el){el.classList.remove('active')});
-  document.getElementById('diag-result').classList.remove('active');
-  var el=document.getElementById(id);
-  if(el) el.classList.add('active');
-}
-function updateProgress(n){
-  var dots=document.querySelectorAll('.diag-progress-dot');
-  dots.forEach(function(d,i){
-    d.classList.remove('active','done');
-    if(i<n-1) d.classList.add('done');
-    else if(i===n-1) d.classList.add('active');
-  });
-}
-
-function diagQ1(v){
-  if(v==='yes'){showStep('diag-step-1b');updateProgress(1);}
-  else{showStep('diag-step-1c');updateProgress(1);}
-}
-function diagMbtiSubmit(){
-  var val=document.getElementById('mbtiInput').value.trim().toUpperCase();
-  if(val.length<2){showStep('diag-step-1c');return;}
-  diagState.intuitive=val.indexOf('N')>=0;
-  diagState.judging=val.indexOf('J')>=0;
-  showStep('diag-step-2');updateProgress(2);
-}
-function diagFallback(v){
-  diagState.intuitive=(v==='A');
-  diagState.judging=(v==='B');
-  showStep('diag-step-2');updateProgress(2);
-}
-function diagQ2(v){diagState.q2=v;showStep('diag-step-3');updateProgress(3);}
-function diagQ3(v){diagState.q3=v;showStep('diag-step-4');updateProgress(4);}
-function diagQ4(v){diagState.q4=v;showStep('diag-step-5');updateProgress(5);}
-function diagQ5(v){diagState.q5=v;showStep('diag-step-6');updateProgress(6);}
-function diagQ6(hasLoan){
-  diagState.hasLoan=hasLoan;
-  var R=calcRisk(diagState.q2||'B',diagState.q3||'B',diagState.q4||'B');
-  var surplus=calcSurplus(diagState.q5||'A');
-  var typeId=determineType(!!diagState.intuitive,!!diagState.judging,R,surplus);
-  showResult(typeId,hasLoan);
-}
-
-function calcRisk(q2,q3,q4){
-  var R=0;
-  R+={A:0,B:1,C:2,D:3}[q2]||0;
-  R+={A:0,B:1,C:1,D:2}[q3]||0;
-  if(q4==='A') R=Math.max(0,R-2);
-  else if(q4==='B') R=Math.max(0,R-1);
-  return R;
-}
-function calcSurplus(q5){return{A:'low',B:'mid',C:'high'}[q5]||'low';}
-function determineType(intuitive,judging,R,surplus){
-  if(intuitive&&judging){
-    if(R<=2) return 'butterfly';
-    if(R<=4) return 'rocket';
-    return 'eagle';
-  } else if(intuitive&&!judging){
-    return R<=3?'dolphin':'rocket';
-  } else if(!intuitive&&judging){
-    if(R<=2) return 'squirrel';
-    if(R<=4) return 'turtle';
-    return 'hunter';
-  } else {
-    if(R<=2) return 'hedgehog';
-    return surplus==='high'?'turtle':'squirrel';
-  }
-}
-
-function showResult(typeId,hasLoan){
-  var t=DIAG_TYPES[typeId];
-  document.getElementById('diag-result').classList.add('active');
-  document.querySelectorAll('.diag-step').forEach(function(el){el.classList.remove('active')});
-  document.querySelectorAll('.diag-progress-dot').forEach(function(d){d.classList.add('done');d.classList.remove('active')});
-  document.getElementById('res-emoji').textContent=t.emoji;
-  document.getElementById('res-type').textContent=t.emoji+' '+t.name;
-  document.getElementById('res-tagline').textContent=t.tagline;
-  var ul=document.getElementById('res-strengths');
-  ul.innerHTML='';
-  t.strengths.forEach(function(s){var li=document.createElement('li');li.textContent=s;ul.appendChild(li);});
-  document.getElementById('res-caution').textContent=t.caution;
-  document.getElementById('res-step').innerHTML=t.step;
-  var cta=document.getElementById('res-cta');
-  cta.textContent=t.ctaLabel;
-  cta.href=t.ctaUrl;
-  var compare=document.getElementById('res-compare');
-  compare.textContent=t.compareLabel;
-  compare.href=t.compareUrl;
-  var loanNote=document.getElementById('diag-loan-note');
-  loanNote.style.display=hasLoan?'block':'none';
-  document.querySelector('.diag-modal').scrollTop=0;
-}
-
-function restartDiag(){
-  diagState={};
-  document.getElementById('mbtiInput').value='';
-  showStep('diag-step-1');
-  updateProgress(1);
-  document.getElementById('diag-result').classList.remove('active');
-}
-</script>
 
 </body>
 </html>
